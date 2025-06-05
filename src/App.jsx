@@ -7,6 +7,7 @@ import { DivWrapper } from "./screens/DivWrapper";
 import { Frame } from "./screens/Frame";
 import { FrameScreen } from "./screens/FrameScreen";
 import { FrameWrapper } from "./screens/FrameWrapper";
+import { Home } from "./screens/Home";
 import { HomeMobile } from "./screens/HomeMobile";
 import { Screen14 } from "./screens/Screen14";
 import { Screen15 } from "./screens/Screen15";
@@ -18,8 +19,12 @@ import { ShowcaseDesktop } from "./screens/ShowcaseDesktop";
 
 const router = createBrowserRouter([
   {
-    path: "/*",
-    element: <HomeMobile />,
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
   },
   {
     path: "/home-mobile",
@@ -80,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/frame-8",
     element: <Screen19 />,
+  },
+  {
+    path: "*",
+    element: <Home />,
   },
 ]);
 

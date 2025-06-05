@@ -25,16 +25,16 @@ export const HomeMobile = () => {
           screenWidth < 1460
             ? "inline-flex"
             : screenWidth >= 1460
-              ? "flex"
-              : undefined,
+            ? "flex"
+            : undefined,
         height: screenWidth >= 1460 ? "4186px" : undefined,
         minHeight: screenWidth < 1460 ? "4692.44px" : undefined,
         minWidth:
           screenWidth < 1460
             ? "395px"
             : screenWidth >= 1460
-              ? "1460px"
-              : undefined,
+            ? "1460px"
+            : undefined,
       }}
     >
       <div className="div-3">
@@ -60,14 +60,9 @@ export const HomeMobile = () => {
 
               <div className="column-wrapper">
                 <div className="column-4">
-                  <a
-                    className="link-text-wrapper-3"
-                    href="aidreambuilders.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  <Link className="link-text-wrapper-3" to="/">
                     <div className="link-text-3">Home</div>
-                  </a>
+                  </Link>
 
                   <Link className="link-text-wrapper-3" to="/about-us-desktop">
                     <div className="link-text-3">About Us</div>
@@ -111,14 +106,9 @@ export const HomeMobile = () => {
                 <div className="div-4">
                   <CompanyLogo alternate={false} className="company-logo-2" />
                   <div className="column-5">
-                    <a
-                      className="link-text-wrapper-4"
-                      href="aidreambuilders.com"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
+                    <Link className="link-text-wrapper-4" to="/">
                       <div className="link-text-4">Home</div>
-                    </a>
+                    </Link>
 
                     <Link
                       className="link-text-wrapper-4"
@@ -172,14 +162,14 @@ export const HomeMobile = () => {
               screenWidth < 1460
                 ? "48px"
                 : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
+                ? "80px"
+                : undefined,
             padding:
               screenWidth < 1460
                 ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
                 : screenWidth >= 1460
-                  ? "50px var(--spacing-sizing-page-padding-padding-global) 61px var(--spacing-sizing-page-padding-padding-global)"
-                  : undefined,
+                ? "50px var(--spacing-sizing-page-padding-padding-global) 61px var(--spacing-sizing-page-padding-padding-global)"
+                : undefined,
           }}
           data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
           data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
@@ -191,8 +181,8 @@ export const HomeMobile = () => {
                 screenWidth < 1460
                   ? "48px"
                   : screenWidth >= 1460
-                    ? "41px"
-                    : undefined,
+                  ? "41px"
+                  : undefined,
             }}
           >
             <div
@@ -212,8 +202,8 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "0 0 auto"
                       : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
+                      ? "1"
+                      : undefined,
                   flexGrow: screenWidth >= 1460 ? "1" : undefined,
                   width: screenWidth < 1460 ? "100%" : undefined,
                 }}
@@ -225,8 +215,8 @@ export const HomeMobile = () => {
                       screenWidth < 1460
                         ? "var(--color-schemes-color-scheme-1-text)"
                         : screenWidth >= 1460
-                          ? "var(--primitives-color-blue-gem)"
-                          : undefined,
+                        ? "var(--primitives-color-blue-gem)"
+                        : undefined,
                   }}
                 >
                   Transforming Ideas into Reality with AI
@@ -240,22 +230,22 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "flex-start"
                       : screenWidth >= 1460
-                        ? "center"
-                        : undefined,
+                      ? "center"
+                      : undefined,
                   alignSelf: screenWidth < 1460 ? "stretch" : undefined,
                   flex:
                     screenWidth < 1460
                       ? "0 0 auto"
                       : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
+                      ? "1"
+                      : undefined,
                   flexGrow: screenWidth >= 1460 ? "1" : undefined,
                   gap:
                     screenWidth < 1460
                       ? "24px"
                       : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
+                      ? "32px"
+                      : undefined,
                   height: screenWidth >= 1460 ? "264px" : undefined,
                   justifyContent: screenWidth >= 1460 ? "center" : undefined,
                   width: screenWidth < 1460 ? "100%" : undefined,
@@ -268,38 +258,38 @@ export const HomeMobile = () => {
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-family)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-family)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-family)"
+                        : undefined,
                     fontSize:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-size)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-size)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-size)"
+                        : undefined,
                     fontStyle:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-style)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-style)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-style)"
+                        : undefined,
                     fontWeight:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-weight)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-weight)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-weight)"
+                        : undefined,
                     letterSpacing:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-letter-spacing)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-letter-spacing)"
-                          : undefined,
+                        ? "var(--text-medium-normal-letter-spacing)"
+                        : undefined,
                     lineHeight:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-line-height)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-line-height)"
-                          : undefined,
+                        ? "var(--text-medium-normal-line-height)"
+                        : undefined,
                     marginTop: screenWidth < 1460 ? "-1.00px" : undefined,
                   }}
                 >
@@ -340,8 +330,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "188.44px"
                     : screenWidth >= 1460
-                      ? "720px"
-                      : undefined,
+                    ? "720px"
+                    : undefined,
               }}
               autoplay="autoplay"
               height="100%"
@@ -361,8 +351,8 @@ export const HomeMobile = () => {
               screenWidth < 1460
                 ? "48px"
                 : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
+                ? "80px"
+                : undefined,
           }}
           data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
           data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
@@ -374,14 +364,14 @@ export const HomeMobile = () => {
                 screenWidth < 1460
                   ? "48px"
                   : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+                  ? "80px"
+                  : undefined,
               width:
                 screenWidth < 1460
                   ? "100%"
                   : screenWidth >= 1460
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+                  ? "var(--spacing-sizing-container-container-large)"
+                  : undefined,
             }}
           >
             <div
@@ -391,15 +381,15 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "flex-start"
                     : screenWidth >= 1460
-                      ? "center"
-                      : undefined,
+                    ? "center"
+                    : undefined,
                 flexDirection: screenWidth < 1460 ? "column" : undefined,
                 gap:
                   screenWidth < 1460
                     ? "48px"
                     : screenWidth >= 1460
-                      ? "80px"
-                      : undefined,
+                    ? "80px"
+                    : undefined,
               }}
             >
               <div
@@ -410,15 +400,15 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "0 0 auto"
                       : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
+                      ? "1"
+                      : undefined,
                   flexGrow: screenWidth >= 1460 ? "1" : undefined,
                   gap:
                     screenWidth < 1460
                       ? "24px"
                       : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
+                      ? "32px"
+                      : undefined,
                   width: screenWidth < 1460 ? "100%" : undefined,
                 }}
               >
@@ -429,8 +419,8 @@ export const HomeMobile = () => {
                       screenWidth < 1460
                         ? "20px"
                         : screenWidth >= 1460
-                          ? "32px"
-                          : undefined,
+                        ? "32px"
+                        : undefined,
                   }}
                 >
                   <div
@@ -440,8 +430,8 @@ export const HomeMobile = () => {
                         screenWidth < 1460
                           ? "12px"
                           : screenWidth >= 1460
-                            ? "16px"
-                            : undefined,
+                          ? "16px"
+                          : undefined,
                     }}
                   >
                     <div
@@ -451,8 +441,8 @@ export const HomeMobile = () => {
                           screenWidth < 1460
                             ? "20px"
                             : screenWidth >= 1460
-                              ? "24px"
-                              : undefined,
+                            ? "24px"
+                            : undefined,
                       }}
                     >
                       <p className="heading-4">
@@ -466,38 +456,38 @@ export const HomeMobile = () => {
                             screenWidth < 1460
                               ? "var(--text-regular-normal-font-family)"
                               : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-family)"
-                                : undefined,
+                              ? "var(--text-medium-normal-font-family)"
+                              : undefined,
                           fontSize:
                             screenWidth < 1460
                               ? "var(--text-regular-normal-font-size)"
                               : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-size)"
-                                : undefined,
+                              ? "var(--text-medium-normal-font-size)"
+                              : undefined,
                           fontStyle:
                             screenWidth < 1460
                               ? "var(--text-regular-normal-font-style)"
                               : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-style)"
-                                : undefined,
+                              ? "var(--text-medium-normal-font-style)"
+                              : undefined,
                           fontWeight:
                             screenWidth < 1460
                               ? "var(--text-regular-normal-font-weight)"
                               : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-weight)"
-                                : undefined,
+                              ? "var(--text-medium-normal-font-weight)"
+                              : undefined,
                           letterSpacing:
                             screenWidth < 1460
                               ? "var(--text-regular-normal-letter-spacing)"
                               : screenWidth >= 1460
-                                ? "var(--text-medium-normal-letter-spacing)"
-                                : undefined,
+                              ? "var(--text-medium-normal-letter-spacing)"
+                              : undefined,
                           lineHeight:
                             screenWidth < 1460
                               ? "var(--text-regular-normal-line-height)"
                               : screenWidth >= 1460
-                                ? "var(--text-medium-normal-line-height)"
-                                : undefined,
+                              ? "var(--text-medium-normal-line-height)"
+                              : undefined,
                         }}
                       >
                         At AI Dream Builders, we harness the power of
@@ -517,8 +507,8 @@ export const HomeMobile = () => {
                           screenWidth < 1460
                             ? "flex-start"
                             : screenWidth >= 1460
-                              ? "center"
-                              : undefined,
+                            ? "center"
+                            : undefined,
                       }}
                     >
                       {screenWidth < 1460 && (
@@ -541,8 +531,8 @@ export const HomeMobile = () => {
                           screenWidth < 1460
                             ? "flex-start"
                             : screenWidth >= 1460
-                              ? "center"
-                              : undefined,
+                            ? "center"
+                            : undefined,
                       }}
                     >
                       <Manufacturing1 className="instance-node-4" />
@@ -558,8 +548,8 @@ export const HomeMobile = () => {
                           screenWidth < 1460
                             ? "flex-start"
                             : screenWidth >= 1460
-                              ? "center"
-                              : undefined,
+                            ? "center"
+                            : undefined,
                       }}
                     >
                       <PartnerExchange2 className="instance-node-4" />
@@ -603,8 +593,8 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "220px"
                       : screenWidth >= 1460
-                        ? "412px"
-                        : undefined,
+                      ? "412px"
+                      : undefined,
                   marginRight: screenWidth >= 1460 ? "-14.00px" : undefined,
                   width: screenWidth < 1460 ? "330px" : undefined,
                 }}
@@ -613,8 +603,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "/img/placeholder-image-1.png"
                     : screenWidth >= 1460
-                      ? "/img/placeholder-image-4.png"
-                      : undefined
+                    ? "/img/placeholder-image-4.png"
+                    : undefined
                 }
               />
             </div>
@@ -628,8 +618,8 @@ export const HomeMobile = () => {
               screenWidth < 1460
                 ? "48px"
                 : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
+                ? "80px"
+                : undefined,
           }}
           data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
           data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
@@ -641,14 +631,14 @@ export const HomeMobile = () => {
                 screenWidth < 1460
                   ? "48px"
                   : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+                  ? "80px"
+                  : undefined,
               width:
                 screenWidth < 1460
                   ? "100%"
                   : screenWidth >= 1460
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+                  ? "var(--spacing-sizing-container-container-large)"
+                  : undefined,
             }}
           >
             <div
@@ -658,8 +648,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "12px"
                     : screenWidth >= 1460
-                      ? "16px"
-                      : undefined,
+                    ? "16px"
+                    : undefined,
               }}
             >
               <div
@@ -669,8 +659,8 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "20px"
                       : screenWidth >= 1460
-                        ? "24px"
-                        : undefined,
+                      ? "24px"
+                      : undefined,
                 }}
               >
                 <p className="heading-5">
@@ -684,38 +674,38 @@ export const HomeMobile = () => {
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-family)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-family)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-family)"
+                        : undefined,
                     fontSize:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-size)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-size)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-size)"
+                        : undefined,
                     fontStyle:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-style)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-style)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-style)"
+                        : undefined,
                     fontWeight:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-font-weight)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-weight)"
-                          : undefined,
+                        ? "var(--text-medium-normal-font-weight)"
+                        : undefined,
                     letterSpacing:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-letter-spacing)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-letter-spacing)"
-                          : undefined,
+                        ? "var(--text-medium-normal-letter-spacing)"
+                        : undefined,
                     lineHeight:
                       screenWidth < 1460
                         ? "var(--text-regular-normal-line-height)"
                         : screenWidth >= 1460
-                          ? "var(--text-medium-normal-line-height)"
-                          : undefined,
+                        ? "var(--text-medium-normal-line-height)"
+                        : undefined,
                   }}
                 >
                   At AI Dream Builders, we specialize in harnessing the power of
@@ -733,8 +723,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "flex-start"
                     : screenWidth >= 1460
-                      ? "center"
-                      : undefined,
+                    ? "center"
+                    : undefined,
                 flexDirection: screenWidth < 1460 ? "column" : undefined,
                 justifyContent: screenWidth < 1460 ? "center" : undefined,
               }}
@@ -908,8 +898,8 @@ export const HomeMobile = () => {
               screenWidth < 1460
                 ? "48px"
                 : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
+                ? "80px"
+                : undefined,
           }}
           data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
           data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
@@ -921,8 +911,8 @@ export const HomeMobile = () => {
                 screenWidth < 1460
                   ? "48px"
                   : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+                  ? "80px"
+                  : undefined,
             }}
           >
             <div
@@ -932,8 +922,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "24px"
                     : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
+                    ? "32px"
+                    : undefined,
               }}
             >
               <div
@@ -943,8 +933,8 @@ export const HomeMobile = () => {
                     screenWidth >= 1460
                       ? "24px"
                       : screenWidth < 1460
-                        ? "20px"
-                        : undefined,
+                      ? "20px"
+                      : undefined,
                 }}
               >
                 <p className="heading-5">Start Your Journey with Us</p>
@@ -956,38 +946,38 @@ export const HomeMobile = () => {
                       screenWidth >= 1460
                         ? "var(--text-medium-normal-font-family)"
                         : screenWidth < 1460
-                          ? "var(--text-regular-normal-font-family)"
-                          : undefined,
+                        ? "var(--text-regular-normal-font-family)"
+                        : undefined,
                     fontSize:
                       screenWidth >= 1460
                         ? "var(--text-medium-normal-font-size)"
                         : screenWidth < 1460
-                          ? "var(--text-regular-normal-font-size)"
-                          : undefined,
+                        ? "var(--text-regular-normal-font-size)"
+                        : undefined,
                     fontStyle:
                       screenWidth >= 1460
                         ? "var(--text-medium-normal-font-style)"
                         : screenWidth < 1460
-                          ? "var(--text-regular-normal-font-style)"
-                          : undefined,
+                        ? "var(--text-regular-normal-font-style)"
+                        : undefined,
                     fontWeight:
                       screenWidth >= 1460
                         ? "var(--text-medium-normal-font-weight)"
                         : screenWidth < 1460
-                          ? "var(--text-regular-normal-font-weight)"
-                          : undefined,
+                        ? "var(--text-regular-normal-font-weight)"
+                        : undefined,
                     letterSpacing:
                       screenWidth >= 1460
                         ? "var(--text-medium-normal-letter-spacing)"
                         : screenWidth < 1460
-                          ? "var(--text-regular-normal-letter-spacing)"
-                          : undefined,
+                        ? "var(--text-regular-normal-letter-spacing)"
+                        : undefined,
                     lineHeight:
                       screenWidth >= 1460
                         ? "var(--text-medium-normal-line-height)"
                         : screenWidth < 1460
-                          ? "var(--text-regular-normal-line-height)"
-                          : undefined,
+                        ? "var(--text-regular-normal-line-height)"
+                        : undefined,
                   }}
                 >
                   Unlock the potential of AI for your business. Contact us for a
@@ -1028,8 +1018,8 @@ export const HomeMobile = () => {
               screenWidth < 1460
                 ? "48px"
                 : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
+                ? "80px"
+                : undefined,
           }}
           data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
           data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
@@ -1041,8 +1031,8 @@ export const HomeMobile = () => {
                 screenWidth < 1460
                   ? "48px"
                   : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+                  ? "80px"
+                  : undefined,
             }}
           >
             <div
@@ -1053,8 +1043,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "48px"
                     : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
+                    ? "32px"
+                    : undefined,
               }}
             >
               <div
@@ -1064,15 +1054,15 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "center"
                       : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
+                      ? "flex-start"
+                      : undefined,
                   alignSelf: screenWidth < 1460 ? "stretch" : undefined,
                   flex:
                     screenWidth < 1460
                       ? "0 0 auto"
                       : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
+                      ? "1"
+                      : undefined,
                   flexGrow: screenWidth >= 1460 ? "1" : undefined,
                   width: screenWidth < 1460 ? "100%" : undefined,
                 }}
@@ -1087,22 +1077,22 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "center"
                       : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
+                      ? "flex-start"
+                      : undefined,
                   alignSelf: screenWidth < 1460 ? "stretch" : undefined,
                   display:
                     screenWidth < 1460
                       ? "flex"
                       : screenWidth >= 1460
-                        ? "inline-flex"
-                        : undefined,
+                      ? "inline-flex"
+                      : undefined,
                   flexDirection: screenWidth < 1460 ? "column" : undefined,
                   gap:
                     screenWidth < 1460
                       ? "24px"
                       : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
+                      ? "32px"
+                      : undefined,
                   justifyContent: screenWidth >= 1460 ? "center" : undefined,
                   width: screenWidth < 1460 ? "100%" : undefined,
                 }}
@@ -1156,22 +1146,22 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "flex-start"
                       : screenWidth >= 1460
-                        ? "center"
-                        : undefined,
+                      ? "center"
+                      : undefined,
                   alignSelf: screenWidth < 1460 ? "stretch" : undefined,
                   flex:
                     screenWidth < 1460
                       ? "0 0 auto"
                       : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
+                      ? "1"
+                      : undefined,
                   flexGrow: screenWidth >= 1460 ? "1" : undefined,
                   justifyContent:
                     screenWidth < 1460
                       ? "center"
                       : screenWidth >= 1460
-                        ? "flex-end"
-                        : undefined,
+                      ? "flex-end"
+                      : undefined,
                   width: screenWidth < 1460 ? "100%" : undefined,
                 }}
                 href="https://www.facebook.com/profile.php?id=61560854473620"
@@ -1189,8 +1179,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "24px"
                     : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
+                    ? "32px"
+                    : undefined,
                 padding: screenWidth < 1460 ? "0px 0px 16px" : undefined,
               }}
             >
@@ -1201,8 +1191,8 @@ export const HomeMobile = () => {
                   screenWidth < 1460
                     ? "/img/divider-1.svg"
                     : screenWidth >= 1460
-                      ? "/img/divider.svg"
-                      : undefined
+                    ? "/img/divider.svg"
+                    : undefined
                 }
               />
 
@@ -1213,15 +1203,15 @@ export const HomeMobile = () => {
                     screenWidth < 1460
                       ? "center"
                       : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
+                      ? "flex-start"
+                      : undefined,
                   flexDirection: screenWidth < 1460 ? "column" : undefined,
                   gap:
                     screenWidth < 1460
                       ? "32px"
                       : screenWidth >= 1460
-                        ? "24px"
-                        : undefined,
+                      ? "24px"
+                      : undefined,
                 }}
               >
                 <div
@@ -1283,38 +1273,38 @@ export const HomeMobile = () => {
                       screenWidth < 1460
                         ? "var(--text-small-normal-font-family)"
                         : screenWidth >= 1460
-                          ? "var(--text-small-link-font-family)"
-                          : undefined,
+                        ? "var(--text-small-link-font-family)"
+                        : undefined,
                     fontSize:
                       screenWidth < 1460
                         ? "var(--text-small-normal-font-size)"
                         : screenWidth >= 1460
-                          ? "var(--text-small-link-font-size)"
-                          : undefined,
+                        ? "var(--text-small-link-font-size)"
+                        : undefined,
                     fontStyle:
                       screenWidth < 1460
                         ? "var(--text-small-normal-font-style)"
                         : screenWidth >= 1460
-                          ? "var(--text-small-link-font-style)"
-                          : undefined,
+                        ? "var(--text-small-link-font-style)"
+                        : undefined,
                     fontWeight:
                       screenWidth < 1460
                         ? "var(--text-small-normal-font-weight)"
                         : screenWidth >= 1460
-                          ? "var(--text-small-link-font-weight)"
-                          : undefined,
+                        ? "var(--text-small-link-font-weight)"
+                        : undefined,
                     letterSpacing:
                       screenWidth < 1460
                         ? "var(--text-small-normal-letter-spacing)"
                         : screenWidth >= 1460
-                          ? "var(--text-small-link-letter-spacing)"
-                          : undefined,
+                        ? "var(--text-small-link-letter-spacing)"
+                        : undefined,
                     lineHeight:
                       screenWidth < 1460
                         ? "var(--text-small-normal-line-height)"
                         : screenWidth >= 1460
-                          ? "var(--text-small-link-line-height)"
-                          : undefined,
+                        ? "var(--text-small-link-line-height)"
+                        : undefined,
                     marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
                     textDecoration:
                       screenWidth >= 1460 ? "underline" : undefined,
