@@ -1,0 +1,29 @@
+.company-logo {
+  height: 37px;
+  position: relative;
+}
+
+.company-logo .chatgpt-image-jun {
+  height: 36px;
+  object-fit: cover;
+  position: absolute;
+  width: 36px;
+}
+
+.company-logo.alternate-false {
+  width: 69px;
+}
+
+.company-logo.alternate-true {
+  width: 84px;
+}
+
+.company-logo.alternate-false .chatgpt-image-jun {
+  left: 17px;
+  top: 0;
+}
+
+.company-logo.alternate-true .chatgpt-image-jun {
+  left: 19px;
+  top: 1px;
+}
