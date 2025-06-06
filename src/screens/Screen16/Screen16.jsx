@@ -19,14 +19,14 @@ export const Screen16 = () => {
               <div className="div-22">
                 <CompanyLogo alternate={false} className="company-logo-11" />
                 <div className="column-28">
-                  <a
+                  <Link
                     className="link-text-wrapper-17"
-                    href="aidreambuilders.com"
+                    to="/"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     <div className="link-text-17">Home</div>
-                  </a>
+                  </Link>
 
                   <Link className="link-text-wrapper-17" to="/about-us-desktop">
                     <div className="link-text-17">About Us</div>
@@ -265,7 +265,8 @@ export const Screen16 = () => {
                 small={false}
                 style="secondary"
                 text="View Our Showcase"
-              />
+                  to="/showcase-desktop"
+                />
               <Button
                 alternate={false}
                 className="button-57"
@@ -274,7 +275,8 @@ export const Screen16 = () => {
                 small={false}
                 style="link"
                 text="Contact"
-              />
+                  to="/contact-us-desktop"
+                />
             </div>
           </div>
         </div>
@@ -351,7 +353,7 @@ export const Screen16 = () => {
 
                 <div className="list-9">
                   <div className="list-item-15">
-                    <AutomationWrapper />
+                    <LinkutomationWrapper />
                     <p className="lorem-ipsum-dolor-9">
                       Automated posts tailored for your audience’s preferences.
                     </p>
@@ -495,3 +497,4 @@ export const Screen16 = () => {
     </div>
   );
 };
+

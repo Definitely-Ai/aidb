@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useWindowWidth } from "../../breakpoints";
+import { useIsMobile, useResponsiveTheme } from "../../breakpoints";
 import { Button } from "../../components/Button";
 import { CompanyLogo } from "../../components/CompanyLogo";
 import { Automation2 } from "../../icons/Automation2";
@@ -12,22 +12,23 @@ import { Maximize } from "../../icons/Maximize";
 import "./style.css";
 
 export const CompaniesSolutions = () => {
-  const screenWidth = useWindowWidth();
+  const isMobile = useIsMobile();
+  const themeProps = useResponsiveTheme();
 
   return (
     <div
       className="companies-solutions"
       style={{
         minHeight:
-          screenWidth < 1460
+          isMobile
             ? "7399px"
-            : screenWidth >= 1460
+            : !isMobile
               ? "6108px"
               : undefined,
         minWidth:
-          screenWidth < 1460
+          isMobile
             ? "395px"
-            : screenWidth >= 1460
+            : !isMobile
               ? "1460px"
               : undefined,
       }}
@@ -36,12 +37,12 @@ export const CompaniesSolutions = () => {
         <div
           className="navbar-4"
           style={{
-            padding: screenWidth < 1460 ? "0px 0px 38px" : undefined,
+            padding: isMobile ? "0px 0px 38px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
-          {screenWidth < 1460 && (
+          {isMobile && (
             <>
               <div className="content-31">
                 <div className="div-6">
@@ -100,7 +101,7 @@ export const CompaniesSolutions = () => {
             </>
           )}
 
-          {screenWidth >= 1460 && (
+          {!isMobile && (
             <header className="header-6">
               <div className="container-17">
                 <div className="div-6">
@@ -162,35 +163,35 @@ export const CompaniesSolutions = () => {
           className="header-7"
           style={{
             backgroundImage:
-              screenWidth < 1460
+              isMobile
                 ? "url(/img/header-65-1-2x.png)"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "url(/img/header-65-1.png)"
                   : undefined,
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
-            justifyContent: screenWidth >= 1460 ? "center" : undefined,
+            justifyContent: !isMobile ? "center" : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "375px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-18"
             style={{
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
             }}
@@ -199,9 +200,9 @@ export const CompaniesSolutions = () => {
               className="section-title-wrapper"
               style={{
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "24px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "32px"
                       : undefined,
               }}
@@ -210,22 +211,22 @@ export const CompaniesSolutions = () => {
                 className="section-title-7"
                 style={{
                   gap:
-                    screenWidth < 1460
+                    isMobile
                       ? "12px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "16px"
                         : undefined,
                 }}
               >
-                {screenWidth >= 1460 && <div className="tagline-wrapper-4" />}
+                {!isMobile && <div className="tagline-wrapper-4" />}
 
                 <div
                   className="content-32"
                   style={{
                     gap:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "24px"
-                        : screenWidth < 1460
+                        : isMobile
                           ? "20px"
                           : undefined,
                   }}
@@ -236,39 +237,39 @@ export const CompaniesSolutions = () => {
                     className="text-wrapper-15"
                     style={{
                       fontFamily:
-                        screenWidth >= 1460
+                        !isMobile
                           ? "var(--text-medium-normal-font-family)"
-                          : screenWidth < 1460
+                          : isMobile
                             ? "var(--text-regular-normal-font-family)"
                             : undefined,
                       fontSize:
-                        screenWidth >= 1460
+                        !isMobile
                           ? "var(--text-medium-normal-font-size)"
-                          : screenWidth < 1460
+                          : isMobile
                             ? "var(--text-regular-normal-font-size)"
                             : undefined,
                       fontStyle:
-                        screenWidth >= 1460
+                        !isMobile
                           ? "var(--text-medium-normal-font-style)"
-                          : screenWidth < 1460
+                          : isMobile
                             ? "var(--text-regular-normal-font-style)"
                             : undefined,
                       fontWeight:
-                        screenWidth >= 1460
+                        !isMobile
                           ? "var(--text-medium-normal-font-weight)"
-                          : screenWidth < 1460
+                          : isMobile
                             ? "var(--text-regular-normal-font-weight)"
                             : undefined,
                       letterSpacing:
-                        screenWidth >= 1460
+                        !isMobile
                           ? "var(--text-medium-normal-letter-spacing)"
-                          : screenWidth < 1460
+                          : isMobile
                             ? "var(--text-regular-normal-letter-spacing)"
                             : undefined,
                       lineHeight:
-                        screenWidth >= 1460
+                        !isMobile
                           ? "var(--text-medium-normal-line-height)"
-                          : screenWidth < 1460
+                          : isMobile
                             ? "var(--text-regular-normal-line-height)"
                             : undefined,
                     }}
@@ -286,40 +287,40 @@ export const CompaniesSolutions = () => {
           className="layout-5"
           style={{
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "375px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-19"
             style={{
               alignItems:
-                screenWidth < 1460
+                isMobile
                   ? "center"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "flex-start"
                     : undefined,
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
               width:
-                screenWidth < 1460
+                isMobile
                   ? "100%"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "var(--spacing-sizing-container-container-large)"
                     : undefined,
             }}
@@ -328,49 +329,49 @@ export const CompaniesSolutions = () => {
               className="component-8"
               style={{
                 alignItems:
-                  screenWidth < 1460
+                  isMobile
                     ? "flex-start"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "center"
                       : undefined,
-                flex: screenWidth < 1460 ? "0 0 auto" : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
+                flex: isMobile ? "0 0 auto" : undefined,
+                flexDirection: isMobile ? "column" : undefined,
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "48px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "80px"
                       : undefined,
-                height: screenWidth >= 1460 ? "640px" : undefined,
+                height: !isMobile ? "640px" : undefined,
               }}
             >
               <div
                 className="content-left-2"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
                   flex:
-                    screenWidth < 1460
+                    isMobile
                       ? "0 0 auto"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "1"
                         : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
                   gap:
-                    screenWidth < 1460
+                    isMobile
                       ? "24px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "32px"
                         : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="section-title-8"
                   style={{
                     gap:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "16px"
-                        : screenWidth < 1460
+                        : isMobile
                           ? "12px"
                           : undefined,
                   }}
@@ -379,9 +380,9 @@ export const CompaniesSolutions = () => {
                     className="content-33"
                     style={{
                       gap:
-                        screenWidth >= 1460
+                        !isMobile
                           ? "24px"
-                          : screenWidth < 1460
+                          : isMobile
                             ? "20px"
                             : undefined,
                     }}
@@ -394,39 +395,39 @@ export const CompaniesSolutions = () => {
                       className="text-11"
                       style={{
                         fontFamily:
-                          screenWidth >= 1460
+                          !isMobile
                             ? "var(--text-medium-normal-font-family)"
-                            : screenWidth < 1460
+                            : isMobile
                               ? "var(--text-regular-normal-font-family)"
                               : undefined,
                         fontSize:
-                          screenWidth >= 1460
+                          !isMobile
                             ? "var(--text-medium-normal-font-size)"
-                            : screenWidth < 1460
+                            : isMobile
                               ? "var(--text-regular-normal-font-size)"
                               : undefined,
                         fontStyle:
-                          screenWidth >= 1460
+                          !isMobile
                             ? "var(--text-medium-normal-font-style)"
-                            : screenWidth < 1460
+                            : isMobile
                               ? "var(--text-regular-normal-font-style)"
                               : undefined,
                         fontWeight:
-                          screenWidth >= 1460
+                          !isMobile
                             ? "var(--text-medium-normal-font-weight)"
-                            : screenWidth < 1460
+                            : isMobile
                               ? "var(--text-regular-normal-font-weight)"
                               : undefined,
                         letterSpacing:
-                          screenWidth >= 1460
+                          !isMobile
                             ? "var(--text-medium-normal-letter-spacing)"
-                            : screenWidth < 1460
+                            : isMobile
                               ? "var(--text-regular-normal-letter-spacing)"
                               : undefined,
                         lineHeight:
-                          screenWidth >= 1460
+                          !isMobile
                             ? "var(--text-medium-normal-line-height)"
-                            : screenWidth < 1460
+                            : isMobile
                               ? "var(--text-regular-normal-line-height)"
                               : undefined,
                       }}
@@ -440,7 +441,7 @@ export const CompaniesSolutions = () => {
                   </div>
                 </div>
 
-                {screenWidth >= 1460 && (
+                {!isMobile && (
                   <div className="div-6">
                     <Button
                       alternate={false}
@@ -466,22 +467,22 @@ export const CompaniesSolutions = () => {
               <img
                 className="placeholder-image-8"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex: screenWidth >= 1460 ? "1" : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
                   height:
-                    screenWidth < 1460
+                    isMobile
                       ? "348px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "640px"
                         : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 alt="Placeholder image"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/placeholder-image-17.png"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "/img/placeholder-image-12.png"
                       : undefined
                 }
@@ -494,34 +495,34 @@ export const CompaniesSolutions = () => {
           className="layout-6"
           style={{
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "375px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-20"
             style={{
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
               width:
-                screenWidth < 1460
+                isMobile
                   ? "100%"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "var(--spacing-sizing-container-container-large)"
                     : undefined,
             }}
@@ -530,9 +531,9 @@ export const CompaniesSolutions = () => {
               className="section-title-9"
               style={{
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "12px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "16px"
                       : undefined,
               }}
@@ -545,9 +546,9 @@ export const CompaniesSolutions = () => {
                 className="content-34"
                 style={{
                   gap:
-                    screenWidth < 1460
+                    isMobile
                       ? "20px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "24px"
                         : undefined,
                 }}
@@ -560,39 +561,39 @@ export const CompaniesSolutions = () => {
                   className="lorem-ipsum-dolor-3"
                   style={{
                     fontFamily:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-family)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-family)"
                           : undefined,
                     fontSize:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-size)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-size)"
                           : undefined,
                     fontStyle:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-style)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-style)"
                           : undefined,
                     fontWeight:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-weight)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-weight)"
                           : undefined,
                     letterSpacing:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-letter-spacing)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-letter-spacing)"
                           : undefined,
                     lineHeight:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-line-height)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-line-height)"
                           : undefined,
                   }}
@@ -609,14 +610,14 @@ export const CompaniesSolutions = () => {
               className="row-9"
               style={{
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "32px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "64px"
                       : undefined,
               }}
             >
-              {screenWidth < 1460 && (
+              {isMobile && (
                 <>
                   <div className="div-7">
                     <img
@@ -696,7 +697,7 @@ export const CompaniesSolutions = () => {
                 </>
               )}
 
-              {screenWidth >= 1460 && (
+              {!isMobile && (
                 <div className="row-10">
                   <div className="div-8">
                     <img
@@ -780,8 +781,8 @@ export const CompaniesSolutions = () => {
             <div className="div-6">
               <Button
                 alternate={false}
-                className={`${screenWidth < 1460 && "button-22"} ${screenWidth >= 1460 && "class"}`}
-                divClassName={`${screenWidth >= 1460 && "class-2"}`}
+                className={`${isMobile && "button-22"} ${!isMobile && "class"}`}
+                divClassName={`${!isMobile && "class-2"}`}
                 iconPosition="no-icon"
                 small={false}
                 style="secondary"
@@ -804,34 +805,34 @@ export const CompaniesSolutions = () => {
           className="layout-7"
           style={{
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "375px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-21"
             style={{
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
               width:
-                screenWidth < 1460
+                isMobile
                   ? "100%"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "var(--spacing-sizing-container-container-large)"
                     : undefined,
             }}
@@ -840,28 +841,28 @@ export const CompaniesSolutions = () => {
               className="component-9"
               style={{
                 alignItems:
-                  screenWidth < 1460
+                  isMobile
                     ? "flex-start"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "center"
                       : undefined,
-                alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
+                alignSelf: isMobile ? "stretch" : undefined,
+                flexDirection: isMobile ? "column" : undefined,
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "48px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "80px"
                       : undefined,
                 width:
-                  screenWidth < 1460
+                  isMobile
                     ? "100%"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "1280px"
                       : undefined,
               }}
             >
-              {screenWidth < 1460 && (
+              {isMobile && (
                 <>
                   <div className="content-37">
                     <div className="div-7">
@@ -909,7 +910,7 @@ export const CompaniesSolutions = () => {
                 </>
               )}
 
-              {screenWidth >= 1460 && (
+              {!isMobile && (
                 <>
                   <img
                     className="placeholder-image-12"
@@ -966,40 +967,40 @@ export const CompaniesSolutions = () => {
           className="layout-8"
           style={{
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
             padding:
-              screenWidth < 1460
+              isMobile
                 ? "30px var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
                   : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "375px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-22"
             style={{
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
               width:
-                screenWidth < 1460
+                isMobile
                   ? "100%"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "var(--spacing-sizing-container-container-large)"
                     : undefined,
             }}
@@ -1008,42 +1009,42 @@ export const CompaniesSolutions = () => {
               className="component-10"
               style={{
                 alignItems:
-                  screenWidth < 1460
+                  isMobile
                     ? "flex-start"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "center"
                       : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap: screenWidth >= 1460 ? "80px" : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: !isMobile ? "80px" : undefined,
               }}
             >
               <div
                 className="content-39"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
                   flex:
-                    screenWidth < 1460
+                    isMobile
                       ? "0 0 auto"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "1"
                         : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
                   gap:
-                    screenWidth < 1460
+                    isMobile
                       ? "20px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "32px"
                         : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="content-40"
                   style={{
                     gap:
-                      screenWidth < 1460
+                      isMobile
                         ? "20px"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "24px"
                           : undefined,
                   }}
@@ -1057,39 +1058,39 @@ export const CompaniesSolutions = () => {
                     className="text-14"
                     style={{
                       fontFamily:
-                        screenWidth < 1460
+                        isMobile
                           ? "var(--text-regular-normal-font-family)"
-                          : screenWidth >= 1460
+                          : !isMobile
                             ? "var(--text-medium-normal-font-family)"
                             : undefined,
                       fontSize:
-                        screenWidth < 1460
+                        isMobile
                           ? "var(--text-regular-normal-font-size)"
-                          : screenWidth >= 1460
+                          : !isMobile
                             ? "var(--text-medium-normal-font-size)"
                             : undefined,
                       fontStyle:
-                        screenWidth < 1460
+                        isMobile
                           ? "var(--text-regular-normal-font-style)"
-                          : screenWidth >= 1460
+                          : !isMobile
                             ? "var(--text-medium-normal-font-style)"
                             : undefined,
                       fontWeight:
-                        screenWidth < 1460
+                        isMobile
                           ? "var(--text-regular-normal-font-weight)"
-                          : screenWidth >= 1460
+                          : !isMobile
                             ? "var(--text-medium-normal-font-weight)"
                             : undefined,
                       letterSpacing:
-                        screenWidth < 1460
+                        isMobile
                           ? "var(--text-regular-normal-letter-spacing)"
-                          : screenWidth >= 1460
+                          : !isMobile
                             ? "var(--text-medium-normal-letter-spacing)"
                             : undefined,
                       lineHeight:
-                        screenWidth < 1460
+                        isMobile
                           ? "var(--text-regular-normal-line-height)"
-                          : screenWidth >= 1460
+                          : !isMobile
                             ? "var(--text-medium-normal-line-height)"
                             : undefined,
                     }}
@@ -1128,22 +1129,22 @@ export const CompaniesSolutions = () => {
               <img
                 className="placeholder-image-13"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex: screenWidth >= 1460 ? "1" : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
                   height:
-                    screenWidth < 1460
+                    isMobile
                       ? "348px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "640px"
                         : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 alt="Placeholder image"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/placeholder-image-20.png"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "/img/placeholder-image-15.png"
                       : undefined
                 }
@@ -1156,40 +1157,40 @@ export const CompaniesSolutions = () => {
           className="layout-9"
           style={{
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
             padding:
-              screenWidth < 1460
+              isMobile
                 ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) 0px var(--spacing-sizing-page-padding-padding-global)"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
                   : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "375px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-23"
             style={{
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
               width:
-                screenWidth < 1460
+                isMobile
                   ? "100%"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "var(--spacing-sizing-container-container-large)"
                     : undefined,
             }}
@@ -1198,21 +1199,21 @@ export const CompaniesSolutions = () => {
               className="component-11"
               style={{
                 alignItems:
-                  screenWidth < 1460
+                  isMobile
                     ? "flex-start"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "center"
                       : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
+                flexDirection: isMobile ? "column" : undefined,
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "48px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "80px"
                       : undefined,
               }}
             >
-              {screenWidth < 1460 && (
+              {isMobile && (
                 <>
                   <div className="div-7">
                     <p className="heading-9">
@@ -1238,7 +1239,7 @@ export const CompaniesSolutions = () => {
                 </>
               )}
 
-              {screenWidth >= 1460 && (
+              {!isMobile && (
                 <>
                   <img
                     className="placeholder-image-15"
@@ -1271,28 +1272,28 @@ export const CompaniesSolutions = () => {
           className="CTA-4"
           style={{
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "375px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-24"
             style={{
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
             }}
@@ -1301,9 +1302,9 @@ export const CompaniesSolutions = () => {
               className="content-41"
               style={{
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "24px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "32px"
                       : undefined,
               }}
@@ -1312,9 +1313,9 @@ export const CompaniesSolutions = () => {
                 className="content-42"
                 style={{
                   gap:
-                    screenWidth < 1460
+                    isMobile
                       ? "20px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "24px"
                         : undefined,
                 }}
@@ -1327,39 +1328,39 @@ export const CompaniesSolutions = () => {
                   className="text-15"
                   style={{
                     fontFamily:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-family)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-family)"
                           : undefined,
                     fontSize:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-size)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-size)"
                           : undefined,
                     fontStyle:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-style)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-style)"
                           : undefined,
                     fontWeight:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-font-weight)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-font-weight)"
                           : undefined,
                     letterSpacing:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-letter-spacing)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-letter-spacing)"
                           : undefined,
                     lineHeight:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-regular-normal-line-height)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-medium-normal-line-height)"
                           : undefined,
                   }}
@@ -1396,30 +1397,30 @@ export const CompaniesSolutions = () => {
         <div
           className="footer-4"
           style={{
-            alignSelf: screenWidth < 1460 ? "stretch" : undefined,
+            alignSelf: isMobile ? "stretch" : undefined,
             gap:
-              screenWidth < 1460
+              isMobile
                 ? "48px"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "80px"
                   : undefined,
             width:
-              screenWidth < 1460
+              isMobile
                 ? "100%"
-                : screenWidth >= 1460
+                : !isMobile
                   ? "1440px"
                   : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
+          
         >
           <div
             className="container-25"
             style={{
               gap:
-                screenWidth < 1460
+                isMobile
                   ? "48px"
-                  : screenWidth >= 1460
+                  : !isMobile
                     ? "80px"
                     : undefined,
             }}
@@ -1427,11 +1428,11 @@ export const CompaniesSolutions = () => {
             <div
               className="content-43"
               style={{
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
+                flexDirection: isMobile ? "column" : undefined,
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "48px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "32px"
                       : undefined,
               }}
@@ -1440,20 +1441,20 @@ export const CompaniesSolutions = () => {
                 className="logo-2"
                 style={{
                   alignItems:
-                    screenWidth < 1460
+                    isMobile
                       ? "center"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "flex-start"
                         : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
                   flex:
-                    screenWidth < 1460
+                    isMobile
                       ? "0 0 auto"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "1"
                         : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <CompanyLogo alternate={false} className="company-logo-4" />
@@ -1463,36 +1464,36 @@ export const CompaniesSolutions = () => {
                 className="links-4"
                 style={{
                   alignItems:
-                    screenWidth < 1460
+                    isMobile
                       ? "center"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "flex-start"
                         : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
                   display:
-                    screenWidth < 1460
+                    isMobile
                       ? "flex"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "inline-flex"
                         : undefined,
-                  flexDirection: screenWidth < 1460 ? "column" : undefined,
+                  flexDirection: isMobile ? "column" : undefined,
                   gap:
-                    screenWidth < 1460
+                    isMobile
                       ? "24px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "32px"
                         : undefined,
-                  justifyContent: screenWidth >= 1460 ? "center" : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  justifyContent: !isMobile ? "center" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <Link
                   className="text-wrapper-19"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/contact-us-desktop"
                 >
@@ -1502,11 +1503,11 @@ export const CompaniesSolutions = () => {
                 <Link
                   className="text-wrapper-20"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/about-us-desktop"
                 >
@@ -1516,11 +1517,11 @@ export const CompaniesSolutions = () => {
                 <Link
                   className="text-wrapper-21"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/companies-u38-solutions-mobile"
                 >
@@ -1532,26 +1533,26 @@ export const CompaniesSolutions = () => {
                 className="facebook-3-wrapper"
                 style={{
                   alignItems:
-                    screenWidth < 1460
+                    isMobile
                       ? "flex-start"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "center"
                         : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
                   flex:
-                    screenWidth < 1460
+                    isMobile
                       ? "0 0 auto"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "1"
                         : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
                   justifyContent:
-                    screenWidth < 1460
+                    isMobile
                       ? "center"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "flex-end"
                         : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 href="https://www.facebook.com/profile.php?id=61560854473620"
                 rel="noopener noreferrer"
@@ -1565,21 +1566,21 @@ export const CompaniesSolutions = () => {
               className="credits-4"
               style={{
                 gap:
-                  screenWidth < 1460
+                  isMobile
                     ? "24px"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "32px"
                       : undefined,
-                padding: screenWidth < 1460 ? "0px 0px 16px" : undefined,
+                padding: isMobile ? "0px 0px 16px" : undefined,
               }}
             >
               <img
                 className="divider-4"
                 alt="Divider"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/divider-2.svg"
-                    : screenWidth >= 1460
+                    : !isMobile
                       ? "/img/divider.svg"
                       : undefined
                 }
@@ -1589,16 +1590,16 @@ export const CompaniesSolutions = () => {
                 className="row-12"
                 style={{
                   alignItems:
-                    screenWidth < 1460
+                    isMobile
                       ? "center"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "flex-start"
                         : undefined,
-                  flexDirection: screenWidth < 1460 ? "column" : undefined,
+                  flexDirection: isMobile ? "column" : undefined,
                   gap:
-                    screenWidth < 1460
+                    isMobile
                       ? "32px"
-                      : screenWidth >= 1460
+                      : !isMobile
                         ? "24px"
                         : undefined,
                 }}
@@ -1606,49 +1607,49 @@ export const CompaniesSolutions = () => {
                 <div
                   className="footer-links-4"
                   style={{
-                    alignItems: screenWidth < 1460 ? "center" : undefined,
+                    alignItems: isMobile ? "center" : undefined,
                     color:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "var(--color-schemes-color-scheme-1-text)"
                         : undefined,
-                    display: screenWidth < 1460 ? "inline-flex" : undefined,
-                    flex: screenWidth < 1460 ? "0 0 auto" : undefined,
-                    flexDirection: screenWidth < 1460 ? "column" : undefined,
+                    display: isMobile ? "inline-flex" : undefined,
+                    flex: isMobile ? "0 0 auto" : undefined,
+                    flexDirection: isMobile ? "column" : undefined,
                     fontFamily:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "var(--text-small-normal-font-family)"
                         : undefined,
                     fontSize:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "var(--text-small-normal-font-size)"
                         : undefined,
                     fontStyle:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "var(--text-small-normal-font-style)"
                         : undefined,
                     fontWeight:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "var(--text-small-normal-font-weight)"
                         : undefined,
-                    gap: screenWidth < 1460 ? "16px" : undefined,
+                    gap: isMobile ? "16px" : undefined,
                     letterSpacing:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "var(--text-small-normal-letter-spacing)"
                         : undefined,
                     lineHeight:
-                      screenWidth >= 1460
+                      !isMobile
                         ? "var(--text-small-normal-line-height)"
                         : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                 >
-                  {screenWidth < 1460 && (
+                  {isMobile && (
                     <div className="text-wrapper-22">Terms of Service</div>
                   )}
 
-                  {screenWidth >= 1460 && (
+                  {!isMobile && (
                     <p className="text-wrapper-87">
                       © 2023 AI Dream Builders. All rights reserved.
                     </p>
@@ -1659,53 +1660,53 @@ export const CompaniesSolutions = () => {
                   className="element-AI-dream-4"
                   style={{
                     fontFamily:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-small-normal-font-family)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-small-link-font-family)"
                           : undefined,
                     fontSize:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-small-normal-font-size)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-small-link-font-size)"
                           : undefined,
                     fontStyle:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-small-normal-font-style)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-small-link-font-style)"
                           : undefined,
                     fontWeight:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-small-normal-font-weight)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-small-link-font-weight)"
                           : undefined,
                     letterSpacing:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-small-normal-letter-spacing)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-small-link-letter-spacing)"
                           : undefined,
                     lineHeight:
-                      screenWidth < 1460
+                      isMobile
                         ? "var(--text-small-normal-line-height)"
-                        : screenWidth >= 1460
+                        : !isMobile
                           ? "var(--text-small-link-line-height)"
                           : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
                     textDecoration:
-                      screenWidth >= 1460 ? "underline" : undefined,
+                      !isMobile ? "underline" : undefined,
                   }}
                 >
-                  {screenWidth < 1460 && (
+                  {isMobile && (
                     <p className="text-wrapper-87">
                       © 2023 AI Dream Builders. All rights reserved.
                     </p>
                   )}
 
-                  {screenWidth >= 1460 && <>Terms of Service</>}
+                  {!isMobile && <>Terms of Service</>}
                 </div>
               </div>
             </div>

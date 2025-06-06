@@ -31,14 +31,14 @@ export const Screen17 = () => {
 
           <div className="row-30">
             <div className="column-29">
-              <a
+              <Link
                 className="link-text-wrapper-18"
-                href="aidreambuilders.com"
+                to="/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <div className="link-text-18">Home</div>
-              </a>
+              </Link>
 
               <Link className="link-text-wrapper-18" to="/about-us-desktop">
                 <div className="link-text-18">About Us</div>
@@ -334,7 +334,7 @@ export const Screen17 = () => {
 
                 <div className="list-11">
                   <div className="list-item-17">
-                    <Automation2 className="icon-instance-node-10" />
+                    <Linkutomation2 className="icon-instance-node-10" />
                     <p className="lorem-ipsum-dolor-10">
                       Automated posts tailored for your audience’s preferences.
                     </p>
@@ -466,14 +466,14 @@ export const Screen17 = () => {
                 </Link>
               </div>
 
-              <a
+              <Link
                 className="social-links-10"
                 href="https://www.facebook.com/profile.php?id=61560854473620"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <Facebook2 className="icon-instance-node-9" />
-              </a>
+              </Link>
             </div>
 
             <div className="credits-13">
@@ -499,3 +499,4 @@ export const Screen17 = () => {
     </div>
   );
 };
+

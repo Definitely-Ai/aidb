@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useWindowWidth } from "../../breakpoints";
+import { usePageTitle } from "../../hooks/usePageTitle";
+import { useIsMobile, useResponsiveTheme } from "../../breakpoints";
 import { Button } from "../../components/Button";
 import { CompanyLogo } from "../../components/CompanyLogo";
 import { ActionKey1 } from "../../icons/ActionKey1";
@@ -16,36 +17,34 @@ import { PartnerExchange2 } from "../../icons/PartnerExchange2";
 import "./style.css";
 
 export const ShowcaseDesktop = () => {
-  const screenWidth = useWindowWidth();
+  const isMobile = useIsMobile();
+  const themeProps = useResponsiveTheme();
+
+  usePageTitle(
+    "Showcase",
+    "Explore AI possibilities with our cutting-edge technology showcase. Discover innovative AI demos, computer vision solutions, and automation tools."
+  );
 
   return (
     <div
       className="showcase-desktop"
       style={{
-        minHeight:
-          screenWidth < 1460
-            ? "5335px"
-            : screenWidth >= 1460
-              ? "5292px"
-              : undefined,
-        minWidth:
-          screenWidth < 1460
-            ? "395px"
-            : screenWidth >= 1460
-              ? "1460px"
-              : undefined,
+        minHeight: isMobile ? "100vh" : "5292px",
+        minWidth: !isMobile ? "1460px" : undefined,
+        width: isMobile ? "100%" : undefined,
+        maxWidth: isMobile ? "100vw" : undefined,
+        overflowX: isMobile ? "hidden" : undefined,
       }}
     >
       <div className="showcase-mobile">
         <div
           className="navbar-5"
           style={{
-            padding: screenWidth < 1460 ? "0px 0px 38px" : undefined,
+            padding: isMobile ? "0px 0px 38px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
-          {screenWidth < 1460 && (
+          {isMobile && (
             <>
               <div className="content-44">
                 <div className="content-45">
@@ -59,14 +58,9 @@ export const ShowcaseDesktop = () => {
 
               <div className="row-13">
                 <div className="column-14">
-                  <a
-                    className="link-text-wrapper-9"
-                    href="aidreambuilders.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  <Link className="link-text-wrapper-9" to="/">
                     <div className="link-text-9">Home</div>
-                  </a>
+                  </Link>
 
                   <Link className="link-text-wrapper-9" to="/about-us-desktop">
                     <div className="link-text-9">About Us</div>
@@ -104,20 +98,15 @@ export const ShowcaseDesktop = () => {
             </>
           )}
 
-          {screenWidth >= 1460 && (
+          {!isMobile && (
             <header className="header-8">
               <div className="container-26">
                 <div className="content-45">
                   <CompanyLogo alternate={false} className="company-logo-5" />
                   <div className="column-15">
-                    <a
-                      className="link-text-wrapper-10"
-                      href="aidreambuilders.com"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
+                    <Link className="link-text-wrapper-10" to="/">
                       <div className="link-text-10">Home</div>
-                    </a>
+                    </Link>
 
                     <Link
                       className="link-text-wrapper-10"
@@ -165,58 +154,27 @@ export const ShowcaseDesktop = () => {
         <div
           className="header-9"
           style={{
-            flex: screenWidth < 1460 ? "0 0 auto" : undefined,
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            height: screenWidth >= 1460 ? "444px" : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            flex: isMobile ? "0 0 auto" : undefined,
+            gap: isMobile ? "48px" : "80px",
+            height: !isMobile ? "444px" : undefined,
+            width: isMobile ? "100%" : "1440px",
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-27"
             style={{
-              flex:
-                screenWidth < 1460
-                  ? "0 0 auto"
-                  : screenWidth >= 1460
-                    ? "1"
-                    : undefined,
-              flexGrow: screenWidth >= 1460 ? "1" : undefined,
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              flex: isMobile ? "0 0 auto" : "1",
+              flexGrow: !isMobile ? "1" : undefined,
+              gap: isMobile ? "48px" : "80px",
             }}
           >
             <div
               className="component-12"
               style={{
-                flex:
-                  screenWidth < 1460
-                    ? "0 0 auto"
-                    : screenWidth >= 1460
-                      ? "1"
-                      : undefined,
-                flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "20px"
-                    : screenWidth >= 1460
-                      ? "24px"
-                      : undefined,
+                flex: isMobile ? "0 0 auto" : "1",
+                flexGrow: !isMobile ? "1" : undefined,
+                gap: isMobile ? "20px" : "24px",
               }}
             >
               <div className="text-wrapper-23">Explore AI Possibilities</div>
@@ -224,53 +182,35 @@ export const ShowcaseDesktop = () => {
               <div
                 className="discover-cutting"
                 style={{
-                  fontFamily:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-family)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-family)"
-                        : undefined,
-                  fontSize:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-size)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-size)"
-                        : undefined,
-                  fontStyle:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-style)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-style)"
-                        : undefined,
-                  fontWeight:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-weight)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-weight)"
-                        : undefined,
-                  letterSpacing:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-letter-spacing)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-letter-spacing)"
-                        : undefined,
-                  lineHeight:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-line-height)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-line-height)"
-                        : undefined,
-                  marginBottom: screenWidth >= 1460 ? "-47.00px" : undefined,
+                  fontFamily: isMobile
+                    ? "var(--text-regular-normal-font-family)"
+                    : "var(--text-medium-normal-font-family)",
+                  fontSize: isMobile
+                    ? "var(--text-regular-normal-font-size)"
+                    : "var(--text-medium-normal-font-size)",
+                  fontStyle: isMobile
+                    ? "var(--text-regular-normal-font-style)"
+                    : "var(--text-medium-normal-font-style)",
+                  fontWeight: isMobile
+                    ? "var(--text-regular-normal-font-weight)"
+                    : "var(--text-medium-normal-font-weight)",
+                  letterSpacing: isMobile
+                    ? "var(--text-regular-normal-letter-spacing)"
+                    : "var(--text-medium-normal-letter-spacing)",
+                  lineHeight: isMobile
+                    ? "var(--text-regular-normal-line-height)"
+                    : "var(--text-medium-normal-line-height)",
+                  marginBottom: !isMobile ? "-47.00px" : undefined,
                 }}
               >
-                {screenWidth < 1460 && (
+                {isMobile && (
                   <p className="text-wrapper-87">
                     Discover cutting-edge AI demos designed to inspire
                     innovative ideas and empower your business.
                   </p>
                 )}
 
-                {screenWidth >= 1460 && (
+                {!isMobile && (
                   <p className="text-wrapper-87">
                     Discover cutting-edge AI solutions designed to inspire,
                     innovative ideas, and empower your business.
@@ -284,120 +224,69 @@ export const ShowcaseDesktop = () => {
         <div
           className="layout-10"
           style={{
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            padding:
-              screenWidth < 1460
-                ? "0px var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
-                : screenWidth >= 1460
-                  ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : "80px",
+            padding: isMobile
+              ? "0px var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
+              : "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)",
+            width: isMobile ? "100%" : "1440px",
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-28"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
-              width:
-                screenWidth < 1460
-                  ? "100%"
-                  : screenWidth >= 1460
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="component-13"
               style={{
-                alignItems:
-                  screenWidth < 1460
-                    ? "flex-start"
-                    : screenWidth >= 1460
-                      ? "center"
-                      : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "80px"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
               }}
             >
               <div
                 className="content-46"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "24px"
-                      : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="content-47"
                   style={{
-                    gap:
-                      screenWidth < 1460
-                        ? "24px"
-                        : screenWidth >= 1460
-                          ? "32px"
-                          : undefined,
+                    gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
                   }}
                 >
                   <div
                     className="section-title-10"
                     style={{
-                      gap:
-                        screenWidth < 1460
-                          ? "12px"
-                          : screenWidth >= 1460
-                            ? "16px"
-                            : undefined,
+                      gap: isMobile ? "12px" : !isMobile ? "16px" : undefined,
                     }}
                   >
                     <div
                       className="content-48"
                       style={{
-                        gap:
-                          screenWidth < 1460
-                            ? "20px"
-                            : screenWidth >= 1460
-                              ? "24px"
-                              : undefined,
+                        gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                       }}
                     >
                       <p
                         className="heading-10"
                         style={{
-                          textAlign: screenWidth < 1460 ? "center" : undefined,
+                          textAlign: isMobile ? "center" : undefined,
                         }}
                       >
                         Unleash the Power of AI Innovation
@@ -406,43 +295,37 @@ export const ShowcaseDesktop = () => {
                       <p
                         className="text-16"
                         style={{
-                          fontFamily:
-                            screenWidth < 1460
-                              ? "var(--text-regular-normal-font-family)"
-                              : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-family)"
-                                : undefined,
-                          fontSize:
-                            screenWidth < 1460
-                              ? "var(--text-regular-normal-font-size)"
-                              : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-size)"
-                                : undefined,
-                          fontStyle:
-                            screenWidth < 1460
-                              ? "var(--text-regular-normal-font-style)"
-                              : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-style)"
-                                : undefined,
-                          fontWeight:
-                            screenWidth < 1460
-                              ? "var(--text-regular-normal-font-weight)"
-                              : screenWidth >= 1460
-                                ? "var(--text-medium-normal-font-weight)"
-                                : undefined,
-                          letterSpacing:
-                            screenWidth < 1460
-                              ? "var(--text-regular-normal-letter-spacing)"
-                              : screenWidth >= 1460
-                                ? "var(--text-medium-normal-letter-spacing)"
-                                : undefined,
-                          lineHeight:
-                            screenWidth < 1460
-                              ? "var(--text-regular-normal-line-height)"
-                              : screenWidth >= 1460
-                                ? "var(--text-medium-normal-line-height)"
-                                : undefined,
-                          textAlign: screenWidth < 1460 ? "center" : undefined,
+                          fontFamily: isMobile
+                            ? "var(--text-regular-normal-font-family)"
+                            : !isMobile
+                            ? "var(--text-medium-normal-font-family)"
+                            : undefined,
+                          fontSize: isMobile
+                            ? "var(--text-regular-normal-font-size)"
+                            : !isMobile
+                            ? "var(--text-medium-normal-font-size)"
+                            : undefined,
+                          fontStyle: isMobile
+                            ? "var(--text-regular-normal-font-style)"
+                            : !isMobile
+                            ? "var(--text-medium-normal-font-style)"
+                            : undefined,
+                          fontWeight: isMobile
+                            ? "var(--text-regular-normal-font-weight)"
+                            : !isMobile
+                            ? "var(--text-medium-normal-font-weight)"
+                            : undefined,
+                          letterSpacing: isMobile
+                            ? "var(--text-regular-normal-letter-spacing)"
+                            : !isMobile
+                            ? "var(--text-medium-normal-letter-spacing)"
+                            : undefined,
+                          lineHeight: isMobile
+                            ? "var(--text-regular-normal-line-height)"
+                            : !isMobile
+                            ? "var(--text-medium-normal-line-height)"
+                            : undefined,
+                          textAlign: isMobile ? "center" : undefined,
                         }}
                       >
                         Experience the transformative potential of AI through
@@ -456,16 +339,11 @@ export const ShowcaseDesktop = () => {
                   <div
                     className="list-4"
                     style={{
-                      gap:
-                        screenWidth < 1460
-                          ? "24px"
-                          : screenWidth >= 1460
-                            ? "16px"
-                            : undefined,
-                      padding: screenWidth < 1460 ? "8px 0px" : undefined,
+                      gap: isMobile ? "24px" : !isMobile ? "16px" : undefined,
+                      padding: isMobile ? "8px 0px" : undefined,
                     }}
                   >
-                    {screenWidth < 1460 && (
+                    {isMobile && (
                       <>
                         <div className="list-item-7">
                           <ActionKey1
@@ -497,7 +375,7 @@ export const ShowcaseDesktop = () => {
                       </>
                     )}
 
-                    {screenWidth >= 1460 && (
+                    {!isMobile && (
                       <div className="row-14">
                         <div className="list-item-9">
                           <ActionKey1
@@ -535,24 +413,19 @@ export const ShowcaseDesktop = () => {
               <img
                 className="placeholder-image-16"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex: screenWidth >= 1460 ? "1" : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  height:
-                    screenWidth < 1460
-                      ? "348px"
-                      : screenWidth >= 1460
-                        ? "640px"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  height: isMobile ? "348px" : !isMobile ? "640px" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 alt="Placeholder image"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/placeholder-image-28.png"
-                    : screenWidth >= 1460
-                      ? "/img/placeholder-image-24.png"
-                      : undefined
+                    : !isMobile
+                    ? "/img/placeholder-image-24.png"
+                    : undefined
                 }
               />
             </div>
@@ -562,58 +435,35 @@ export const ShowcaseDesktop = () => {
         <div
           className="layout-11"
           style={{
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-29"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
-              width:
-                screenWidth < 1460
-                  ? "100%"
-                  : screenWidth >= 1460
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="component-14"
               style={{
-                alignItems:
-                  screenWidth < 1460
-                    ? "flex-start"
-                    : screenWidth >= 1460
-                      ? "center"
-                      : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "80px"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
               }}
             >
-              {screenWidth < 1460 && (
+              {isMobile && (
                 <>
                   <div className="content-49">
                     <div className="content-50">
@@ -659,7 +509,7 @@ export const ShowcaseDesktop = () => {
                 </>
               )}
 
-              {screenWidth >= 1460 && (
+              {!isMobile && (
                 <>
                   <img
                     className="placeholder-image-18"
@@ -713,86 +563,48 @@ export const ShowcaseDesktop = () => {
         <div
           className="layout-12"
           style={{
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-30"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
-              width:
-                screenWidth < 1460
-                  ? "100%"
-                  : screenWidth >= 1460
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="component-15"
               style={{
-                alignItems:
-                  screenWidth < 1460
-                    ? "flex-start"
-                    : screenWidth >= 1460
-                      ? "center"
-                      : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "80px"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
               }}
             >
               <div
                 className="content-53"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "20px"
-                      : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  gap: isMobile ? "20px" : !isMobile ? "32px" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="content-54"
                   style={{
-                    gap:
-                      screenWidth < 1460
-                        ? "20px"
-                        : screenWidth >= 1460
-                          ? "24px"
-                          : undefined,
+                    gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                   }}
                 >
                   <p className="heading-11">
@@ -802,42 +614,36 @@ export const ShowcaseDesktop = () => {
                   <p
                     className="text-21"
                     style={{
-                      fontFamily:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-family)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-family)"
-                            : undefined,
-                      fontSize:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-size)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-size)"
-                            : undefined,
-                      fontStyle:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-style)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-style)"
-                            : undefined,
-                      fontWeight:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-weight)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-weight)"
-                            : undefined,
-                      letterSpacing:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-letter-spacing)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-letter-spacing)"
-                            : undefined,
-                      lineHeight:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-line-height)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-line-height)"
-                            : undefined,
+                      fontFamily: isMobile
+                        ? "var(--text-regular-normal-font-family)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-family)"
+                        : undefined,
+                      fontSize: isMobile
+                        ? "var(--text-regular-normal-font-size)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-size)"
+                        : undefined,
+                      fontStyle: isMobile
+                        ? "var(--text-regular-normal-font-style)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-style)"
+                        : undefined,
+                      fontWeight: isMobile
+                        ? "var(--text-regular-normal-font-weight)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-weight)"
+                        : undefined,
+                      letterSpacing: isMobile
+                        ? "var(--text-regular-normal-letter-spacing)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-letter-spacing)"
+                        : undefined,
+                      lineHeight: isMobile
+                        ? "var(--text-regular-normal-line-height)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-line-height)"
+                        : undefined,
                     }}
                   >
                     Imagine the transformative power of AI in your industry.
@@ -873,24 +679,19 @@ export const ShowcaseDesktop = () => {
               <img
                 className="placeholder-image-19"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex: screenWidth >= 1460 ? "1" : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  height:
-                    screenWidth < 1460
-                      ? "348px"
-                      : screenWidth >= 1460
-                        ? "640px"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  height: isMobile ? "348px" : !isMobile ? "640px" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 alt="Placeholder image"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/placeholder-image-29.png"
-                    : screenWidth >= 1460
-                      ? "/img/placeholder-image-26.png"
-                      : undefined
+                    : !isMobile
+                    ? "/img/placeholder-image-26.png"
+                    : undefined
                 }
               />
             </div>
@@ -900,53 +701,27 @@ export const ShowcaseDesktop = () => {
         <div
           className="CTA-5"
           style={{
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-31"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="content-55"
               style={{
-                gap:
-                  screenWidth < 1460
-                    ? "24px"
-                    : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
+                gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
               }}
             >
               <div
                 className="content-56"
                 style={{
-                  gap:
-                    screenWidth < 1460
-                      ? "20px"
-                      : screenWidth >= 1460
-                        ? "24px"
-                        : undefined,
+                  gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                 }}
               >
                 <p className="heading-13">Ready to Build the Future?</p>
@@ -954,42 +729,36 @@ export const ShowcaseDesktop = () => {
                 <p
                   className="text-22"
                   style={{
-                    fontFamily:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-family)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-family)"
-                          : undefined,
-                    fontSize:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-size)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-size)"
-                          : undefined,
-                    fontStyle:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-style)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-style)"
-                          : undefined,
-                    fontWeight:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-weight)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-weight)"
-                          : undefined,
-                    letterSpacing:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-letter-spacing)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-letter-spacing)"
-                          : undefined,
-                    lineHeight:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-line-height)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-line-height)"
-                          : undefined,
+                    fontFamily: isMobile
+                      ? "var(--text-regular-normal-font-family)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-family)"
+                      : undefined,
+                    fontSize: isMobile
+                      ? "var(--text-regular-normal-font-size)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-size)"
+                      : undefined,
+                    fontStyle: isMobile
+                      ? "var(--text-regular-normal-font-style)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-style)"
+                      : undefined,
+                    fontWeight: isMobile
+                      ? "var(--text-regular-normal-font-weight)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-weight)"
+                      : undefined,
+                    letterSpacing: isMobile
+                      ? "var(--text-regular-normal-letter-spacing)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-letter-spacing)"
+                      : undefined,
+                    lineHeight: isMobile
+                      ? "var(--text-regular-normal-line-height)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-line-height)"
+                      : undefined,
                   }}
                 >
                   Let’s collaborate and make your vision a reality. Contact us
@@ -1015,74 +784,38 @@ export const ShowcaseDesktop = () => {
         <div
           className="contact-2"
           style={{
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-32"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="content-57"
               style={{
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "80px"
-                      : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
               }}
             >
               <div
                 className="section-title-11"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "12px"
-                      : screenWidth >= 1460
-                        ? "16px"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  gap: isMobile ? "12px" : !isMobile ? "16px" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="content-58"
                   style={{
-                    gap:
-                      screenWidth < 1460
-                        ? "20px"
-                        : screenWidth >= 1460
-                          ? "24px"
-                          : undefined,
+                    gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                   }}
                 >
                   <div className="heading-14">Get in Touch</div>
@@ -1090,42 +823,36 @@ export const ShowcaseDesktop = () => {
                   <p
                     className="text-23"
                     style={{
-                      fontFamily:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-family)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-family)"
-                            : undefined,
-                      fontSize:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-size)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-size)"
-                            : undefined,
-                      fontStyle:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-style)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-style)"
-                            : undefined,
-                      fontWeight:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-weight)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-weight)"
-                            : undefined,
-                      letterSpacing:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-letter-spacing)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-letter-spacing)"
-                            : undefined,
-                      lineHeight:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-line-height)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-line-height)"
-                            : undefined,
+                      fontFamily: isMobile
+                        ? "var(--text-regular-normal-font-family)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-family)"
+                        : undefined,
+                      fontSize: isMobile
+                        ? "var(--text-regular-normal-font-size)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-size)"
+                        : undefined,
+                      fontStyle: isMobile
+                        ? "var(--text-regular-normal-font-style)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-style)"
+                        : undefined,
+                      fontWeight: isMobile
+                        ? "var(--text-regular-normal-font-weight)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-weight)"
+                        : undefined,
+                      letterSpacing: isMobile
+                        ? "var(--text-regular-normal-letter-spacing)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-letter-spacing)"
+                        : undefined,
+                      lineHeight: isMobile
+                        ? "var(--text-regular-normal-line-height)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-line-height)"
+                        : undefined,
                     }}
                   >
                     We’re here to help you explore AI solutions tailored to your
@@ -1137,14 +864,9 @@ export const ShowcaseDesktop = () => {
               <div
                 className="row-15"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex: screenWidth < 1460 ? "0 0 auto" : undefined,
-                  width:
-                    screenWidth < 1460
-                      ? "100%"
-                      : screenWidth >= 1460
-                        ? "500px"
-                        : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : undefined,
+                  width: isMobile ? "100%" : !isMobile ? "500px" : undefined,
                 }}
               >
                 <div className="content-59">
@@ -1181,27 +903,17 @@ export const ShowcaseDesktop = () => {
             <img
               className="placeholder-image-20"
               style={{
-                alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                height:
-                  screenWidth < 1460
-                    ? "188px"
-                    : screenWidth >= 1460
-                      ? "720px"
-                      : undefined,
-                width:
-                  screenWidth < 1460
-                    ? "100%"
-                    : screenWidth >= 1460
-                      ? "1280px"
-                      : undefined,
+                alignSelf: isMobile ? "stretch" : undefined,
+                height: isMobile ? "188px" : !isMobile ? "720px" : undefined,
+                width: isMobile ? "100%" : !isMobile ? "1280px" : undefined,
               }}
               alt="Placeholder image"
               src={
-                screenWidth < 1460
+                isMobile
                   ? "/img/placeholder-image-30.png"
-                  : screenWidth >= 1460
-                    ? "/img/placeholder-image-27.png"
-                    : undefined
+                  : !isMobile
+                  ? "/img/placeholder-image-27.png"
+                  : undefined
               }
             />
           </div>
@@ -1210,64 +922,37 @@ export const ShowcaseDesktop = () => {
         <div
           className="footer-5"
           style={{
-            alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "100%"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            alignSelf: isMobile ? "stretch" : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-33"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="content-60"
               style={{
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "32px" : undefined,
               }}
             >
               <div
                 className="logo-3"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <CompanyLogo alternate={false} className="company-logo-5" />
@@ -1276,37 +961,30 @@ export const ShowcaseDesktop = () => {
               <div
                 className="links-5"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  display:
-                    screenWidth < 1460
-                      ? "flex"
-                      : screenWidth >= 1460
-                        ? "inline-flex"
-                        : undefined,
-                  flexDirection: screenWidth < 1460 ? "column" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "24px"
-                      : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
-                  justifyContent: screenWidth >= 1460 ? "center" : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  display: isMobile
+                    ? "flex"
+                    : !isMobile
+                    ? "inline-flex"
+                    : undefined,
+                  flexDirection: isMobile ? "column" : undefined,
+                  gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
+                  justifyContent: !isMobile ? "center" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <Link
                   className="text-wrapper-25"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/contact-us-desktop"
                 >
@@ -1316,11 +994,11 @@ export const ShowcaseDesktop = () => {
                 <Link
                   className="text-wrapper-26"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/about-us-desktop"
                 >
@@ -1330,11 +1008,11 @@ export const ShowcaseDesktop = () => {
                 <Link
                   className="companies-solutions-5"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/companies-u38-solutions-mobile"
                 >
@@ -1345,27 +1023,20 @@ export const ShowcaseDesktop = () => {
               <a
                 className="social-links-2"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "flex-start"
-                      : screenWidth >= 1460
-                        ? "center"
-                        : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  justifyContent:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-end"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignItems: isMobile
+                    ? "flex-start"
+                    : !isMobile
+                    ? "center"
+                    : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  justifyContent: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-end"
+                    : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 href="https://www.facebook.com/profile.php?id=61560854473620"
                 rel="noopener noreferrer"
@@ -1378,91 +1049,73 @@ export const ShowcaseDesktop = () => {
             <div
               className="credits-5"
               style={{
-                gap:
-                  screenWidth < 1460
-                    ? "24px"
-                    : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
-                padding: screenWidth < 1460 ? "0px 0px 16px" : undefined,
+                gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
+                padding: isMobile ? "0px 0px 16px" : undefined,
               }}
             >
               <img
                 className="divider-5"
                 alt="Divider"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/divider-2.svg"
-                    : screenWidth >= 1460
-                      ? "/img/divider.svg"
-                      : undefined
+                    : !isMobile
+                    ? "/img/divider.svg"
+                    : undefined
                 }
               />
 
               <div
                 className="row-16"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
-                  flexDirection: screenWidth < 1460 ? "column" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "32px"
-                      : screenWidth >= 1460
-                        ? "24px"
-                        : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
+                  flexDirection: isMobile ? "column" : undefined,
+                  gap: isMobile ? "32px" : !isMobile ? "24px" : undefined,
                 }}
               >
                 <div
                   className="footer-links-5"
                   style={{
-                    alignItems: screenWidth < 1460 ? "center" : undefined,
-                    color:
-                      screenWidth >= 1460
-                        ? "var(--color-schemes-color-scheme-1-text)"
-                        : undefined,
-                    display: screenWidth < 1460 ? "inline-flex" : undefined,
-                    flex: screenWidth < 1460 ? "0 0 auto" : undefined,
-                    flexDirection: screenWidth < 1460 ? "column" : undefined,
-                    fontFamily:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-family)"
-                        : undefined,
-                    fontSize:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-size)"
-                        : undefined,
-                    fontStyle:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-style)"
-                        : undefined,
-                    fontWeight:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-weight)"
-                        : undefined,
-                    gap: screenWidth < 1460 ? "16px" : undefined,
-                    letterSpacing:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-letter-spacing)"
-                        : undefined,
-                    lineHeight:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-line-height)"
-                        : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignItems: isMobile ? "center" : undefined,
+                    color: !isMobile
+                      ? "var(--color-schemes-color-scheme-1-text)"
+                      : undefined,
+                    display: isMobile ? "inline-flex" : undefined,
+                    flex: isMobile ? "0 0 auto" : undefined,
+                    flexDirection: isMobile ? "column" : undefined,
+                    fontFamily: !isMobile
+                      ? "var(--text-small-normal-font-family)"
+                      : undefined,
+                    fontSize: !isMobile
+                      ? "var(--text-small-normal-font-size)"
+                      : undefined,
+                    fontStyle: !isMobile
+                      ? "var(--text-small-normal-font-style)"
+                      : undefined,
+                    fontWeight: !isMobile
+                      ? "var(--text-small-normal-font-weight)"
+                      : undefined,
+                    gap: isMobile ? "16px" : undefined,
+                    letterSpacing: !isMobile
+                      ? "var(--text-small-normal-letter-spacing)"
+                      : undefined,
+                    lineHeight: !isMobile
+                      ? "var(--text-small-normal-line-height)"
+                      : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                 >
-                  {screenWidth < 1460 && (
+                  {isMobile && (
                     <div className="text-wrapper-27">Terms of Service</div>
                   )}
 
-                  {screenWidth >= 1460 && (
+                  {!isMobile && (
                     <p className="text-wrapper-87">
                       © 2023 AI Dream Builders. All rights reserved.
                     </p>
@@ -1472,54 +1125,47 @@ export const ShowcaseDesktop = () => {
                 <div
                   className="element-AI-dream-5"
                   style={{
-                    fontFamily:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-family)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-family)"
-                          : undefined,
-                    fontSize:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-size)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-size)"
-                          : undefined,
-                    fontStyle:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-style)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-style)"
-                          : undefined,
-                    fontWeight:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-weight)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-weight)"
-                          : undefined,
-                    letterSpacing:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-letter-spacing)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-letter-spacing)"
-                          : undefined,
-                    lineHeight:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-line-height)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-line-height)"
-                          : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textDecoration:
-                      screenWidth >= 1460 ? "underline" : undefined,
+                    fontFamily: isMobile
+                      ? "var(--text-small-normal-font-family)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-family)"
+                      : undefined,
+                    fontSize: isMobile
+                      ? "var(--text-small-normal-font-size)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-size)"
+                      : undefined,
+                    fontStyle: isMobile
+                      ? "var(--text-small-normal-font-style)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-style)"
+                      : undefined,
+                    fontWeight: isMobile
+                      ? "var(--text-small-normal-font-weight)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-weight)"
+                      : undefined,
+                    letterSpacing: isMobile
+                      ? "var(--text-small-normal-letter-spacing)"
+                      : !isMobile
+                      ? "var(--text-small-link-letter-spacing)"
+                      : undefined,
+                    lineHeight: isMobile
+                      ? "var(--text-small-normal-line-height)"
+                      : !isMobile
+                      ? "var(--text-small-link-line-height)"
+                      : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textDecoration: !isMobile ? "underline" : undefined,
                   }}
                 >
-                  {screenWidth < 1460 && (
+                  {isMobile && (
                     <p className="text-wrapper-87">
                       © 2023 AI Dream Builders. All rights reserved.
                     </p>
                   )}
 
-                  {screenWidth >= 1460 && <>Terms of Service</>}
+                  {!isMobile && <>Terms of Service</>}
                 </div>
               </div>
             </div>

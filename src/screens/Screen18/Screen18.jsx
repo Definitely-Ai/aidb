@@ -23,14 +23,14 @@ export const Screen18 = () => {
               <div className="content-103">
                 <CompanyLogo alternate={false} className="company-logo-13" />
                 <div className="column-30">
-                  <a
+                  <Link
                     className="link-text-wrapper-19"
-                    href="aidreambuilders.com"
+                    to="/"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     <div className="link-text-19">Home</div>
-                  </a>
+                  </Link>
 
                   <Link className="link-text-wrapper-19" to="/about-us-desktop">
                     <div className="link-text-19">About Us</div>
@@ -107,7 +107,7 @@ export const Screen18 = () => {
                   <div className="div-wrapper-3">
                     <div className="row-33">
                       <div className="div-33">
-                        <ActionKey />
+                        <LinkctionKey />
                         <div className="text-wrapper-77">AI in Action</div>
 
                         <p className="text-36">
@@ -214,7 +214,7 @@ export const Screen18 = () => {
                   </div>
 
                   <div className="list-item-18">
-                    <Apps />
+                    <Linkpps />
                     <p className="lorem-ipsum-dolor-11">
                       Innovative AI applications that drive real results.
                     </p>
@@ -369,3 +369,4 @@ export const Screen18 = () => {
     </div>
   );
 };
+

@@ -27,14 +27,14 @@ export const Screen15 = () => {
 
           <div className="row-25">
             <div className="column-27">
-              <a
+              <Link
                 className="link-text-wrapper-16"
-                href="aidreambuilders.com"
+                to="/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <div className="link-text-16">Home</div>
-              </a>
+              </Link>
 
               <Link className="link-text-wrapper-16" to="/about-us-desktop">
                 <div className="link-text-16">About Us</div>
@@ -267,14 +267,14 @@ export const Screen15 = () => {
                 </Link>
               </div>
 
-              <a
+              <Link
                 className="social-links-8"
                 href="https://www.facebook.com/profile.php?id=61560854473620"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <Facebook2 className="icon-instance-node-7" />
-              </a>
+              </Link>
             </div>
 
             <div className="credits-11">
@@ -300,3 +300,4 @@ export const Screen15 = () => {
     </div>
   );
 };
+

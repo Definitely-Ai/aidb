@@ -16,14 +16,9 @@ export const Screen14 = () => {
               <div className="div-18">
                 <CompanyLogo alternate={false} className="company-logo-9" />
                 <div className="column-26">
-                  <a
-                    className="link-text-wrapper-15"
-                    href="aidreambuilders.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  <Link className="link-text-wrapper-15" to="/">
                     <div className="link-text-15">Home</div>
-                  </a>
+                  </Link>
 
                   <Link className="link-text-wrapper-15" to="/about-us-desktop">
                     <div className="link-text-15">About Us</div>
@@ -90,6 +85,7 @@ export const Screen14 = () => {
                   small={false}
                   style="primary"
                   text="View Our Showcase"
+                  to="/showcase-desktop"
                 />
                 <Button
                   alternate={false}
@@ -98,6 +94,7 @@ export const Screen14 = () => {
                   small={false}
                   style="secondary"
                   text="Join Us"
+                  to="/contact-us-desktop"
                 />
               </div>
             </div>
@@ -137,6 +134,7 @@ export const Screen14 = () => {
                     small={false}
                     style="secondary"
                     text="View Our Showcase"
+                    to="/showcase-desktop"
                   />
                   <Button
                     alternate={false}
@@ -146,6 +144,7 @@ export const Screen14 = () => {
                     small={false}
                     style="link"
                     text="Contact"
+                    to="/contact-us-desktop"
                   />
                 </div>
               </div>
@@ -195,6 +194,7 @@ export const Screen14 = () => {
                     small={false}
                     style="secondary"
                     text="View Our Showcase"
+                    to="/showcase-desktop"
                   />
                   <Button
                     alternate={false}
@@ -204,6 +204,7 @@ export const Screen14 = () => {
                     small={false}
                     style="link"
                     text="Contact"
+                    to="/contact-us-desktop"
                   />
                 </div>
               </div>
@@ -232,6 +233,7 @@ export const Screen14 = () => {
                     small={false}
                     style="primary"
                     text="View Our Showcase"
+                    to="/showcase-desktop"
                   />
                   <Button
                     alternate={false}
@@ -240,6 +242,7 @@ export const Screen14 = () => {
                     small={false}
                     style="secondary"
                     text="Contact"
+                    to="/contact-us-desktop"
                   />
                 </div>
               </div>

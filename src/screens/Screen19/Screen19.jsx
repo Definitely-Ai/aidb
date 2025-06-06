@@ -35,14 +35,14 @@ export const Screen19 = () => {
 
           <div className="row-36">
             <div className="column-31">
-              <a
+              <Link
                 className="link-text-wrapper-20"
-                href="aidreambuilders.com"
+                to="/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <div className="link-text-20">Home</div>
-              </a>
+              </Link>
 
               <Link className="link-text-wrapper-20" to="/about-us-desktop">
                 <div className="link-text-20">About Us</div>
@@ -122,7 +122,7 @@ export const Screen19 = () => {
 
                   <div className="div-36">
                     <div className="list-item-19">
-                      <ActionKey />
+                      <LinkctionKey />
                       <div className="subheading-one-2">AI in Action</div>
 
                       <p className="text-39">
@@ -234,7 +234,7 @@ export const Screen19 = () => {
                   </div>
 
                   <div className="list-item-21">
-                    <Apps />
+                    <Linkpps />
                     <p className="lorem-ipsum-dolor-12">
                       Innovative AI applications that drive real results.
                     </p>
@@ -375,14 +375,14 @@ export const Screen19 = () => {
                 </Link>
               </div>
 
-              <a
+              <Link
                 className="social-links-12"
                 href="https://www.facebook.com/profile.php?id=61560854473620"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <Facebook2 className="icon-instance-node-12" />
-              </a>
+              </Link>
             </div>
 
             <div className="credits-15">
@@ -408,3 +408,4 @@ export const Screen19 = () => {
     </div>
   );
 };
+

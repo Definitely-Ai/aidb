@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useWindowWidth } from "../../breakpoints";
+import { useIsMobile, useResponsiveTheme } from "../../breakpoints";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { Button } from "../../components/Button";
+
 import { CompanyLogo } from "../../components/CompanyLogo";
 import { Call2 } from "../../icons/Call2";
 import { Close } from "../../icons/Close";
@@ -11,36 +13,34 @@ import { Mail1 } from "../../icons/Mail1";
 import "./style.css";
 
 export const ContactUsDesktop = () => {
-  const screenWidth = useWindowWidth();
+  const isMobile = useIsMobile();
+  const themeProps = useResponsiveTheme();
+
+  usePageTitle(
+    "Contact Us",
+    "Get in touch with AI Dream Builders. Contact us for innovative technology solutions, AI automation, computer vision, and custom hardware development."
+  );
 
   return (
     <div
       className="contact-us-desktop"
       style={{
-        minHeight:
-          screenWidth < 1460
-            ? "2803px"
-            : screenWidth >= 1460
-              ? "2105px"
-              : undefined,
-        minWidth:
-          screenWidth < 1460
-            ? "395px"
-            : screenWidth >= 1460
-              ? "1460px"
-              : undefined,
+        minHeight: isMobile ? "100vh" : !isMobile ? "2105px" : undefined,
+        minWidth: !isMobile ? "1460px" : undefined,
+        width: isMobile ? "100%" : undefined,
+        maxWidth: isMobile ? "100vw" : undefined,
+        overflowX: isMobile ? "hidden" : undefined,
       }}
     >
       <div className="contact-mobile">
         <div
           className="navbar"
           style={{
-            padding: screenWidth < 1460 ? "0px 0px 38px" : undefined,
+            padding: isMobile ? "0px 0px 38px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
-          {screenWidth < 1460 && (
+          {isMobile && (
             <>
               <div className="content">
                 <div className="content-2">
@@ -57,14 +57,9 @@ export const ContactUsDesktop = () => {
 
               <div className="row">
                 <div className="column">
-                  <a
-                    className="link-text-wrapper"
-                    href="aidreambuilders.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  <Link className="link-text-wrapper" to="/">
                     <div className="link-text">Home</div>
-                  </a>
+                  </Link>
 
                   <Link className="link-text-wrapper" to="/about-us-desktop">
                     <div className="link-text">About Us</div>
@@ -102,7 +97,7 @@ export const ContactUsDesktop = () => {
             </>
           )}
 
-          {screenWidth >= 1460 && (
+          {!isMobile && (
             <header className="header">
               <div className="container">
                 <div className="content-2">
@@ -111,14 +106,9 @@ export const ContactUsDesktop = () => {
                     className="company-logo-instance"
                   />
                   <div className="column-2">
-                    <a
-                      className="link-text-wrapper-2"
-                      href="aidreambuilders.com"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
+                    <Link className="link-text-wrapper-2" to="/">
                       <div className="link-text-2">Home</div>
-                    </a>
+                    </Link>
 
                     <Link
                       className="link-text-wrapper-2"
@@ -166,58 +156,29 @@ export const ContactUsDesktop = () => {
         <div
           className="container-wrapper"
           style={{
-            flex: screenWidth < 1460 ? "0 0 auto" : undefined,
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            height: screenWidth >= 1460 ? "369px" : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            flex: isMobile ? "0 0 auto" : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            height: !isMobile ? "369px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
+            maxWidth: isMobile ? "100vw" : undefined,
+            overflowX: isMobile ? "hidden" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="component-wrapper"
             style={{
-              flex:
-                screenWidth < 1460
-                  ? "0 0 auto"
-                  : screenWidth >= 1460
-                    ? "1"
-                    : undefined,
-              flexGrow: screenWidth >= 1460 ? "1" : undefined,
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+              flexGrow: !isMobile ? "1" : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="component"
               style={{
-                flex:
-                  screenWidth < 1460
-                    ? "0 0 auto"
-                    : screenWidth >= 1460
-                      ? "1"
-                      : undefined,
-                flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "20px"
-                    : screenWidth >= 1460
-                      ? "24px"
-                      : undefined,
+                flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                flexGrow: !isMobile ? "1" : undefined,
+                gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
               }}
             >
               <div className="text-wrapper-2">Connect with Us</div>
@@ -225,42 +186,36 @@ export const ContactUsDesktop = () => {
               <p
                 className="ready-to-turn-your"
                 style={{
-                  fontFamily:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-family)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-family)"
-                        : undefined,
-                  fontSize:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-size)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-size)"
-                        : undefined,
-                  fontStyle:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-style)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-style)"
-                        : undefined,
-                  fontWeight:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-font-weight)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-font-weight)"
-                        : undefined,
-                  letterSpacing:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-letter-spacing)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-letter-spacing)"
-                        : undefined,
-                  lineHeight:
-                    screenWidth < 1460
-                      ? "var(--text-regular-normal-line-height)"
-                      : screenWidth >= 1460
-                        ? "var(--text-medium-normal-line-height)"
-                        : undefined,
+                  fontFamily: isMobile
+                    ? "var(--text-regular-normal-font-family)"
+                    : !isMobile
+                    ? "var(--text-medium-normal-font-family)"
+                    : undefined,
+                  fontSize: isMobile
+                    ? "var(--text-regular-normal-font-size)"
+                    : !isMobile
+                    ? "var(--text-medium-normal-font-size)"
+                    : undefined,
+                  fontStyle: isMobile
+                    ? "var(--text-regular-normal-font-style)"
+                    : !isMobile
+                    ? "var(--text-medium-normal-font-style)"
+                    : undefined,
+                  fontWeight: isMobile
+                    ? "var(--text-regular-normal-font-weight)"
+                    : !isMobile
+                    ? "var(--text-medium-normal-font-weight)"
+                    : undefined,
+                  letterSpacing: isMobile
+                    ? "var(--text-regular-normal-letter-spacing)"
+                    : !isMobile
+                    ? "var(--text-medium-normal-letter-spacing)"
+                    : undefined,
+                  lineHeight: isMobile
+                    ? "var(--text-regular-normal-line-height)"
+                    : !isMobile
+                    ? "var(--text-medium-normal-line-height)"
+                    : undefined,
                 }}
               >
                 Ready to turn your vision into reality? Let&#39;s discuss your
@@ -273,93 +228,56 @@ export const ContactUsDesktop = () => {
         <div
           className="CTA"
           style={{
-            alignItems:
-              screenWidth < 1460
-                ? "flex-start"
-                : screenWidth >= 1460
-                  ? "center"
-                  : undefined,
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            alignItems: isMobile
+              ? "flex-start"
+              : !isMobile
+              ? "center"
+              : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
+            maxWidth: isMobile ? "100vw" : undefined,
+            overflowX: isMobile ? "hidden" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-2"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="component-2"
               style={{
-                alignItems:
-                  screenWidth < 1460
-                    ? "flex-start"
-                    : screenWidth >= 1460
-                      ? "center"
-                      : undefined,
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "80px"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
               }}
             >
               <div
                 className="column-3"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "24px"
-                      : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
-                  justifyContent: screenWidth < 1460 ? "center" : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
+                  justifyContent: isMobile ? "center" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="content-3"
                   style={{
-                    gap:
-                      screenWidth < 1460
-                        ? "20px"
-                        : screenWidth >= 1460
-                          ? "24px"
-                          : undefined,
+                    gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                   }}
                 >
                   <p className="heading">
@@ -369,42 +287,36 @@ export const ContactUsDesktop = () => {
                   <p
                     className="text"
                     style={{
-                      fontFamily:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-family)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-family)"
-                            : undefined,
-                      fontSize:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-size)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-size)"
-                            : undefined,
-                      fontStyle:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-style)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-style)"
-                            : undefined,
-                      fontWeight:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-font-weight)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-font-weight)"
-                            : undefined,
-                      letterSpacing:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-letter-spacing)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-letter-spacing)"
-                            : undefined,
-                      lineHeight:
-                        screenWidth < 1460
-                          ? "var(--text-regular-normal-line-height)"
-                          : screenWidth >= 1460
-                            ? "var(--text-medium-normal-line-height)"
-                            : undefined,
+                      fontFamily: isMobile
+                        ? "var(--text-regular-normal-font-family)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-family)"
+                        : undefined,
+                      fontSize: isMobile
+                        ? "var(--text-regular-normal-font-size)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-size)"
+                        : undefined,
+                      fontStyle: isMobile
+                        ? "var(--text-regular-normal-font-style)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-style)"
+                        : undefined,
+                      fontWeight: isMobile
+                        ? "var(--text-regular-normal-font-weight)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-weight)"
+                        : undefined,
+                      letterSpacing: isMobile
+                        ? "var(--text-regular-normal-letter-spacing)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-letter-spacing)"
+                        : undefined,
+                      lineHeight: isMobile
+                        ? "var(--text-regular-normal-line-height)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-line-height)"
+                        : undefined,
                     }}
                   >
                     We&#39;re excited to help you turn your innovative ideas
@@ -427,24 +339,19 @@ export const ContactUsDesktop = () => {
               <img
                 className="placeholder-image"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex: screenWidth >= 1460 ? "1" : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  height:
-                    screenWidth < 1460
-                      ? "218px"
-                      : screenWidth >= 1460
-                        ? "400px"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  height: isMobile ? "218px" : !isMobile ? "400px" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 alt="Placeholder image"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/placeholder-image-3.png"
-                    : screenWidth >= 1460
-                      ? "/img/placeholder-image.png"
-                      : undefined
+                    : !isMobile
+                    ? "/img/placeholder-image.png"
+                    : undefined
                 }
               />
             </div>
@@ -454,48 +361,29 @@ export const ContactUsDesktop = () => {
         <div
           className="contact"
           style={{
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "375px"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
+            maxWidth: isMobile ? "100vw" : undefined,
+            overflowX: isMobile ? "hidden" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-3"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="section-title"
               style={{
-                gap:
-                  screenWidth < 1460
-                    ? "12px"
-                    : screenWidth >= 1460
-                      ? "16px"
-                      : undefined,
+                gap: isMobile ? "12px" : !isMobile ? "16px" : undefined,
               }}
             >
               <div
                 className="tagline-wrapper"
                 style={{
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
                 }}
               >
                 <div className="tagline">Connect</div>
@@ -504,12 +392,7 @@ export const ContactUsDesktop = () => {
               <div
                 className="content-4"
                 style={{
-                  gap:
-                    screenWidth < 1460
-                      ? "20px"
-                      : screenWidth >= 1460
-                        ? "24px"
-                        : undefined,
+                  gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                 }}
               >
                 <div className="heading-2">Get in Touch</div>
@@ -517,42 +400,36 @@ export const ContactUsDesktop = () => {
                 <p
                   className="p"
                   style={{
-                    fontFamily:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-family)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-family)"
-                          : undefined,
-                    fontSize:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-size)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-size)"
-                          : undefined,
-                    fontStyle:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-style)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-style)"
-                          : undefined,
-                    fontWeight:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-font-weight)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-font-weight)"
-                          : undefined,
-                    letterSpacing:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-letter-spacing)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-letter-spacing)"
-                          : undefined,
-                    lineHeight:
-                      screenWidth < 1460
-                        ? "var(--text-regular-normal-line-height)"
-                        : screenWidth >= 1460
-                          ? "var(--text-medium-normal-line-height)"
-                          : undefined,
+                    fontFamily: isMobile
+                      ? "var(--text-regular-normal-font-family)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-family)"
+                      : undefined,
+                    fontSize: isMobile
+                      ? "var(--text-regular-normal-font-size)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-size)"
+                      : undefined,
+                    fontStyle: isMobile
+                      ? "var(--text-regular-normal-font-style)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-style)"
+                      : undefined,
+                    fontWeight: isMobile
+                      ? "var(--text-regular-normal-font-weight)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-weight)"
+                      : undefined,
+                    letterSpacing: isMobile
+                      ? "var(--text-regular-normal-letter-spacing)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-letter-spacing)"
+                      : undefined,
+                    lineHeight: isMobile
+                      ? "var(--text-regular-normal-line-height)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-line-height)"
+                      : undefined,
                   }}
                 >
                   We&#39;re here to help with your AI needs.
@@ -563,15 +440,10 @@ export const ContactUsDesktop = () => {
             <div
               className="row-2"
               style={{
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "64px"
-                      : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "64px" : undefined,
               }}
             >
-              {screenWidth < 1460 && (
+              {isMobile && (
                 <>
                   <div className="div-2">
                     <Mail1 className="instance-node-2" />
@@ -620,7 +492,7 @@ export const ContactUsDesktop = () => {
                 </>
               )}
 
-              {screenWidth >= 1460 && (
+              {!isMobile && (
                 <div className="row-3">
                   <div className="content-6">
                     <Mail1 className="instance-node-2" />
@@ -675,64 +547,37 @@ export const ContactUsDesktop = () => {
         <div
           className="footer"
           style={{
-            alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-            gap:
-              screenWidth < 1460
-                ? "48px"
-                : screenWidth >= 1460
-                  ? "80px"
-                  : undefined,
-            width:
-              screenWidth < 1460
-                ? "100%"
-                : screenWidth >= 1460
-                  ? "1440px"
-                  : undefined,
+            alignSelf: isMobile ? "stretch" : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
           }}
-          data-spacing-sizing-mode={screenWidth < 1460 ? "mobile" : undefined}
-          data-typography-mode={screenWidth < 1460 ? "mobile" : undefined}
+          {...themeProps}
         >
           <div
             className="container-4"
             style={{
-              gap:
-                screenWidth < 1460
-                  ? "48px"
-                  : screenWidth >= 1460
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="content-8"
               style={{
-                flexDirection: screenWidth < 1460 ? "column" : undefined,
-                gap:
-                  screenWidth < 1460
-                    ? "48px"
-                    : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
+                flexDirection: isMobile ? "column" : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "32px" : undefined,
               }}
             >
               <div
                 className="logo"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <CompanyLogo
@@ -744,37 +589,30 @@ export const ContactUsDesktop = () => {
               <div
                 className="links"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  display:
-                    screenWidth < 1460
-                      ? "flex"
-                      : screenWidth >= 1460
-                        ? "inline-flex"
-                        : undefined,
-                  flexDirection: screenWidth < 1460 ? "column" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "24px"
-                      : screenWidth >= 1460
-                        ? "32px"
-                        : undefined,
-                  justifyContent: screenWidth >= 1460 ? "center" : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  display: isMobile
+                    ? "flex"
+                    : !isMobile
+                    ? "inline-flex"
+                    : undefined,
+                  flexDirection: isMobile ? "column" : undefined,
+                  gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
+                  justifyContent: !isMobile ? "center" : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
               >
                 <Link
                   className="text-wrapper-3"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/contact-us-desktop"
                 >
@@ -784,11 +622,11 @@ export const ContactUsDesktop = () => {
                 <Link
                   className="text-wrapper-4"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/about-us-desktop"
                 >
@@ -798,11 +636,11 @@ export const ContactUsDesktop = () => {
                 <Link
                   className="companies-solutions-2"
                   style={{
-                    alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textAlign: screenWidth < 1460 ? "center" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignSelf: isMobile ? "stretch" : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textAlign: isMobile ? "center" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                   to="/companies-u38-solutions-mobile"
                 >
@@ -813,27 +651,20 @@ export const ContactUsDesktop = () => {
               <a
                 className="social-links"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "flex-start"
-                      : screenWidth >= 1460
-                        ? "center"
-                        : undefined,
-                  alignSelf: screenWidth < 1460 ? "stretch" : undefined,
-                  flex:
-                    screenWidth < 1460
-                      ? "0 0 auto"
-                      : screenWidth >= 1460
-                        ? "1"
-                        : undefined,
-                  flexGrow: screenWidth >= 1460 ? "1" : undefined,
-                  justifyContent:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-end"
-                        : undefined,
-                  width: screenWidth < 1460 ? "100%" : undefined,
+                  alignItems: isMobile
+                    ? "flex-start"
+                    : !isMobile
+                    ? "center"
+                    : undefined,
+                  alignSelf: isMobile ? "stretch" : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
+                  flexGrow: !isMobile ? "1" : undefined,
+                  justifyContent: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-end"
+                    : undefined,
+                  width: isMobile ? "100%" : undefined,
                 }}
                 href="https://www.facebook.com/profile.php?id=61560854473620"
                 rel="noopener noreferrer"
@@ -846,91 +677,73 @@ export const ContactUsDesktop = () => {
             <div
               className="credits"
               style={{
-                gap:
-                  screenWidth < 1460
-                    ? "24px"
-                    : screenWidth >= 1460
-                      ? "32px"
-                      : undefined,
-                padding: screenWidth < 1460 ? "0px 0px 16px" : undefined,
+                gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
+                padding: isMobile ? "0px 0px 16px" : undefined,
               }}
             >
               <img
                 className="divider"
                 alt="Divider"
                 src={
-                  screenWidth < 1460
+                  isMobile
                     ? "/img/divider-2.svg"
-                    : screenWidth >= 1460
-                      ? "/img/divider.svg"
-                      : undefined
+                    : !isMobile
+                    ? "/img/divider.svg"
+                    : undefined
                 }
               />
 
               <div
                 className="row-4"
                 style={{
-                  alignItems:
-                    screenWidth < 1460
-                      ? "center"
-                      : screenWidth >= 1460
-                        ? "flex-start"
-                        : undefined,
-                  flexDirection: screenWidth < 1460 ? "column" : undefined,
-                  gap:
-                    screenWidth < 1460
-                      ? "32px"
-                      : screenWidth >= 1460
-                        ? "24px"
-                        : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
+                  flexDirection: isMobile ? "column" : undefined,
+                  gap: isMobile ? "32px" : !isMobile ? "24px" : undefined,
                 }}
               >
                 <div
                   className="footer-links"
                   style={{
-                    alignItems: screenWidth < 1460 ? "center" : undefined,
-                    color:
-                      screenWidth >= 1460
-                        ? "var(--color-schemes-color-scheme-1-text)"
-                        : undefined,
-                    display: screenWidth < 1460 ? "inline-flex" : undefined,
-                    flex: screenWidth < 1460 ? "0 0 auto" : undefined,
-                    flexDirection: screenWidth < 1460 ? "column" : undefined,
-                    fontFamily:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-family)"
-                        : undefined,
-                    fontSize:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-size)"
-                        : undefined,
-                    fontStyle:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-style)"
-                        : undefined,
-                    fontWeight:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-font-weight)"
-                        : undefined,
-                    gap: screenWidth < 1460 ? "16px" : undefined,
-                    letterSpacing:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-letter-spacing)"
-                        : undefined,
-                    lineHeight:
-                      screenWidth >= 1460
-                        ? "var(--text-small-normal-line-height)"
-                        : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    whiteSpace: screenWidth >= 1460 ? "nowrap" : undefined,
-                    width: screenWidth >= 1460 ? "fit-content" : undefined,
+                    alignItems: isMobile ? "center" : undefined,
+                    color: !isMobile
+                      ? "var(--color-schemes-color-scheme-1-text)"
+                      : undefined,
+                    display: isMobile ? "inline-flex" : undefined,
+                    flex: isMobile ? "0 0 auto" : undefined,
+                    flexDirection: isMobile ? "column" : undefined,
+                    fontFamily: !isMobile
+                      ? "var(--text-small-normal-font-family)"
+                      : undefined,
+                    fontSize: !isMobile
+                      ? "var(--text-small-normal-font-size)"
+                      : undefined,
+                    fontStyle: !isMobile
+                      ? "var(--text-small-normal-font-style)"
+                      : undefined,
+                    fontWeight: !isMobile
+                      ? "var(--text-small-normal-font-weight)"
+                      : undefined,
+                    gap: isMobile ? "16px" : undefined,
+                    letterSpacing: !isMobile
+                      ? "var(--text-small-normal-letter-spacing)"
+                      : undefined,
+                    lineHeight: !isMobile
+                      ? "var(--text-small-normal-line-height)"
+                      : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    whiteSpace: !isMobile ? "nowrap" : undefined,
+                    width: !isMobile ? "fit-content" : undefined,
                   }}
                 >
-                  {screenWidth < 1460 && (
+                  {isMobile && (
                     <div className="text-wrapper-5">Terms of Service</div>
                   )}
 
-                  {screenWidth >= 1460 && (
+                  {!isMobile && (
                     <p className="text-wrapper-87">
                       © 2023 AI Dream Builders. All rights reserved.
                     </p>
@@ -940,54 +753,47 @@ export const ContactUsDesktop = () => {
                 <div
                   className="element-AI-dream"
                   style={{
-                    fontFamily:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-family)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-family)"
-                          : undefined,
-                    fontSize:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-size)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-size)"
-                          : undefined,
-                    fontStyle:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-style)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-style)"
-                          : undefined,
-                    fontWeight:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-font-weight)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-font-weight)"
-                          : undefined,
-                    letterSpacing:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-letter-spacing)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-letter-spacing)"
-                          : undefined,
-                    lineHeight:
-                      screenWidth < 1460
-                        ? "var(--text-small-normal-line-height)"
-                        : screenWidth >= 1460
-                          ? "var(--text-small-link-line-height)"
-                          : undefined,
-                    marginTop: screenWidth >= 1460 ? "-1.00px" : undefined,
-                    textDecoration:
-                      screenWidth >= 1460 ? "underline" : undefined,
+                    fontFamily: isMobile
+                      ? "var(--text-small-normal-font-family)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-family)"
+                      : undefined,
+                    fontSize: isMobile
+                      ? "var(--text-small-normal-font-size)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-size)"
+                      : undefined,
+                    fontStyle: isMobile
+                      ? "var(--text-small-normal-font-style)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-style)"
+                      : undefined,
+                    fontWeight: isMobile
+                      ? "var(--text-small-normal-font-weight)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-weight)"
+                      : undefined,
+                    letterSpacing: isMobile
+                      ? "var(--text-small-normal-letter-spacing)"
+                      : !isMobile
+                      ? "var(--text-small-link-letter-spacing)"
+                      : undefined,
+                    lineHeight: isMobile
+                      ? "var(--text-small-normal-line-height)"
+                      : !isMobile
+                      ? "var(--text-small-link-line-height)"
+                      : undefined,
+                    marginTop: !isMobile ? "-1.00px" : undefined,
+                    textDecoration: !isMobile ? "underline" : undefined,
                   }}
                 >
-                  {screenWidth < 1460 && (
+                  {isMobile && (
                     <p className="text-wrapper-87">
                       © 2023 AI Dream Builders. All rights reserved.
                     </p>
                   )}
 
-                  {screenWidth >= 1460 && <>Terms of Service</>}
+                  {!isMobile && <>Terms of Service</>}
                 </div>
               </div>
             </div>

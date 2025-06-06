@@ -1,5 +1,6 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import { AboutUsDesktop } from "./screens/AboutUsDesktop";
 import { CompaniesSolutions } from "./screens/CompaniesSolutions";
 import { ContactUsDesktop } from "./screens/ContactUsDesktop";
@@ -93,5 +94,9 @@ const router = createBrowserRouter([
 ]);
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <ErrorBoundary>
+      <RouterProvider router={router} />
+    </ErrorBoundary>
+  );
 };

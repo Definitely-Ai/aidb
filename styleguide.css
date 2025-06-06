@@ -2,14 +2,18 @@
   --black: rgba(0, 0, 0, 1);
   --color-schemes-color-scheme-1-accent: var(--primitives-color-jaguar);
   --color-schemes-color-scheme-1-background: var(--primitives-color-white);
-  --color-schemes-color-scheme-1-border: var(--primitives-color-neutral-darkest);
+  --color-schemes-color-scheme-1-border: var(
+    --primitives-color-neutral-darkest
+  );
   --color-schemes-color-scheme-1-foreground: var(--primitives-color-white);
   --color-schemes-color-scheme-1-text: var(--primitives-color-neutral-darkest);
   --color-schemes-color-scheme-2-accent: var(--primitives-color-jaguar);
   --color-schemes-color-scheme-2-background: var(
     --primitives-color-neutral-lightest
   );
-  --color-schemes-color-scheme-2-border: var(--primitives-color-neutral-darkest);
+  --color-schemes-color-scheme-2-border: var(
+    --primitives-color-neutral-darkest
+  );
   --color-schemes-color-scheme-2-foreground: var(
     --primitives-color-neutral-lightest
   );
@@ -57,10 +61,10 @@
   --heading-tagline-font-weight: 600;
   --heading-tagline-letter-spacing: 0px;
   --heading-tagline-line-height: 150%;
-  --large: 0px 8px 8px -4px rgba(0, 0, 0, 0.03), 0px 20px 24px -4px
-    rgba(0, 0, 0, 0.08);
-  --medium: 0px 4px 6px -2px rgba(0, 0, 0, 0.03), 0px 12px 16px -4px
-    rgba(0, 0, 0, 0.08);
+  --large: 0px 8px 8px -4px rgba(0, 0, 0, 0.03),
+    0px 20px 24px -4px rgba(0, 0, 0, 0.08);
+  --medium: 0px 4px 6px -2px rgba(0, 0, 0, 0.03),
+    0px 12px 16px -4px rgba(0, 0, 0, 0.08);
   --primitives-color-blue-gem: rgba(86, 18, 156, 1);
   --primitives-color-blue-gem-dark: rgba(68, 14, 124, 1);
   --primitives-color-blue-gem-darker: rgba(34, 7, 62, 1);
@@ -100,8 +104,8 @@
   --primitives-opacity-white-5: rgba(255, 255, 255, 0.05);
   --primitives-opacity-white-50: rgba(255, 255, 255, 0.5);
   --primitives-opacity-white-60: rgba(255, 255, 255, 0.6);
-  --small: 0px 2px 4px -2px rgba(0, 0, 0, 0.06), 0px 4px 8px -2px
-    rgba(0, 0, 0, 0.1);
+  --small: 0px 2px 4px -2px rgba(0, 0, 0, 0.06),
+    0px 4px 8px -2px rgba(0, 0, 0, 0.1);
   --spacing-sizing-container-container-large: 1280px;
   --spacing-sizing-container-container-medium: 1024px;
   --spacing-sizing-container-container-small: 768px;
@@ -344,8 +348,8 @@
   --UI-styles-stroke-divider-width: 2px;
   --white: rgba(255, 255, 255, 1);
   --xlarge: 0px 24px 48px -12px rgba(0, 0, 0, 0.18);
-  --xsmall: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px
-    rgba(0, 0, 0, 0.1);
+  --xsmall: 0px 1px 2px 0px rgba(0, 0, 0, 0.06),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1);
   --xxlarge: 0px 32px 64px -12px rgba(0, 0, 0, 0.14);
   --xxsmall: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 }
@@ -402,4 +406,390 @@ You can apply the theme on any DOM node, not just the `body`
   --spacing-sizing-section-padding-padding-section-large: 64px;
   --spacing-sizing-section-padding-padding-section-medium: 48px;
   --spacing-sizing-section-padding-padding-section-small: 32px;
+}
+
+/* Mobile-specific responsive styles */
+@media (max-width: 768px) {
+  .home-mobile,
+  .home-mobile * {
+    box-sizing: border-box;
+  }
+
+  .home-mobile {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .home-mobile img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .home-mobile div,
+  .home-mobile section,
+  .home-mobile article,
+  .home-mobile aside,
+  .home-mobile header,
+  .home-mobile footer {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure all flex containers are responsive */
+  .home-mobile [style*="display: flex"],
+  .home-mobile [style*="display: inline-flex"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* Force responsive behavior on any element with fixed widths */
+  .home-mobile [style*="width:"],
+  .home-mobile [style*="min-width:"] {
+    max-width: 100% !important;
+  }
+
+  /* Mobile headline responsiveness fixes */
+  .home-mobile h1,
+  .home-mobile h2,
+  .home-mobile h3,
+  .home-mobile h4,
+  .home-mobile h5,
+  .home-mobile h6,
+  .home-mobile [class*="heading"],
+  .home-mobile [class*="text-wrapper"] {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    font-size: clamp(1.5rem, 5vw, 3rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Mobile button padding fixes */
+  .home-mobile .button,
+  .home-mobile [class*="button"] {
+    padding: 12px 20px !important;
+    margin: 4px 0 !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Additional mobile viewport fixes */
+@media (max-width: 480px) {
+  :root {
+    --spacing-sizing-page-padding-padding-global: 16px;
+  }
+
+  .home-mobile {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Prevent horizontal scrolling on all screen sizes */
+body,
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+#app {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Contact page mobile fixes */
+@media (max-width: 768px) {
+  .contact-us-desktop,
+  .contact-us-desktop * {
+    box-sizing: border-box;
+  }
+
+  .contact-us-desktop {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .contact-us-desktop .contact-mobile,
+  .contact-us-desktop .container-wrapper,
+  .contact-us-desktop .column-4,
+  .contact-us-desktop .contact,
+  .contact-us-desktop .footer {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .contact-us-desktop img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* Ensure all flex containers are responsive */
+  .contact-us-desktop [style*="display: flex"],
+  .contact-us-desktop [style*="display: inline-flex"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* Force responsive behavior on any element with fixed widths */
+  .contact-us-desktop [style*="width:"],
+  .contact-us-desktop [style*="min-width:"] {
+    max-width: 100% !important;
+  }
+
+  /* Mobile headline responsiveness fixes */
+  .contact-us-desktop h1,
+  .contact-us-desktop h2,
+  .contact-us-desktop h3,
+  .contact-us-desktop h4,
+  .contact-us-desktop h5,
+  .contact-us-desktop h6,
+  .contact-us-desktop [class*="heading"],
+  .contact-us-desktop [class*="text-wrapper"] {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    font-size: clamp(1.5rem, 5vw, 3rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Mobile button padding fixes */
+  .contact-us-desktop .button,
+  .contact-us-desktop [class*="button"] {
+    padding: 12px 20px !important;
+    margin: 4px 0 !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* About page mobile fixes */
+@media (max-width: 768px) {
+  .about-us-desktop,
+  .about-us-desktop * {
+    box-sizing: border-box;
+  }
+
+  .about-us-desktop {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .about-us-desktop .about-us-mobile,
+  .about-us-desktop .header-5,
+  .about-us-desktop .layout-3,
+  .about-us-desktop .layout-4,
+  .about-us-desktop .footer {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .about-us-desktop img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .about-us-desktop [style*="width:"],
+  .about-us-desktop [style*="min-width:"] {
+    max-width: 100% !important;
+  }
+
+  /* Mobile headline responsiveness fixes */
+  .about-us-desktop h1,
+  .about-us-desktop h2,
+  .about-us-desktop h3,
+  .about-us-desktop h4,
+  .about-us-desktop h5,
+  .about-us-desktop h6,
+  .about-us-desktop .text-wrapper-9,
+  .about-us-desktop .heading-7,
+  .about-us-desktop [class*="heading"],
+  .about-us-desktop [class*="text-wrapper"] {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    font-size: clamp(1.5rem, 5vw, 3rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Mobile button padding fixes */
+  .about-us-desktop .button,
+  .about-us-desktop [class*="button"] {
+    padding: 12px 20px !important;
+    margin: 4px 0 !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Action container spacing */
+  .about-us-desktop .actions-6,
+  .about-us-desktop .actions-7,
+  .about-us-desktop .actions-8 {
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+}
+
+/* Showcase page mobile fixes */
+@media (max-width: 768px) {
+  .showcase-desktop,
+  .showcase-desktop * {
+    box-sizing: border-box;
+  }
+
+  .showcase-desktop {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .showcase-desktop .showcase-mobile,
+  .showcase-desktop .header-9,
+  .showcase-desktop .layout-5,
+  .showcase-desktop .layout-6,
+  .showcase-desktop .layout-7,
+  .showcase-desktop .footer {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .showcase-desktop img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .showcase-desktop [style*="width:"],
+  .showcase-desktop [style*="min-width:"] {
+    max-width: 100% !important;
+  }
+
+  /* Mobile headline responsiveness fixes */
+  .showcase-desktop h1,
+  .showcase-desktop h2,
+  .showcase-desktop h3,
+  .showcase-desktop h4,
+  .showcase-desktop h5,
+  .showcase-desktop h6,
+  .showcase-desktop [class*="heading"],
+  .showcase-desktop [class*="text-wrapper"] {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    font-size: clamp(1.5rem, 5vw, 3rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Mobile button padding fixes */
+  .showcase-desktop .button,
+  .showcase-desktop [class*="button"] {
+    padding: 12px 20px !important;
+    margin: 4px 0 !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Universal mobile responsiveness fixes */
+@media (max-width: 768px) {
+  /* Global headline fixes for mobile */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  [class*="heading"]:not([class*="link"]),
+  [class*="text-wrapper"]:not([class*="link"]):not([class*="button"]) {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    font-size: clamp(1.2rem, 4vw, 2.5rem) !important;
+    line-height: 1.3 !important;
+    padding: 0 8px !important;
+  }
+
+  /* Global button fixes for mobile */
+  .button,
+  [class*="button"],
+  a[class*="button"] {
+    padding: 12px 16px !important;
+    margin: 6px 2px !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure proper touch target sizes */
+  .button .text-wrapper,
+  .button .div,
+  [class*="button"] .text-wrapper,
+  [class*="button"] .div {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  /* Fix container spacing on mobile */
+  [class*="actions"],
+  [class*="action"] {
+    gap: 8px !important;
+    padding: 8px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Prevent text overflow in containers */
+  [class*="content"],
+  [class*="section"],
+  [class*="container"] {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Screen component fixes */
+  [class*="screen-"],
+  [class*="frame-"] {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  [class*="screen-"] [class*="heading"],
+  [class*="screen-"] [class*="text-wrapper"],
+  [class*="frame-"] [class*="heading"],
+  [class*="frame-"] [class*="text-wrapper"] {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
 }

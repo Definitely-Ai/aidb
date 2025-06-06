@@ -45,8 +45,9 @@
 }
 
 .button.primary {
-  box-shadow:
-    0px 1px 2px #0000000d, inset 0px -2px 1px #00000033, inset 0px 0px 0px 1px #00000026, inset 0px 2px 1px #ffffff40, inset 0px 32px 24px #ffffff0d;
+  box-shadow: 0px 1px 2px #0000000d, inset 0px -2px 1px #00000033,
+    inset 0px 0px 0px 1px #00000026, inset 0px 2px 1px #ffffff40,
+    inset 0px 32px 24px #ffffff0d;
 }
 
 .button.secondary {
@@ -234,4 +235,54 @@
 
 .button.secondary.alternate-1-true .div {
   color: var(--primitives-color-white);
+}
+
+/* Mobile-specific button improvements */
+@media (max-width: 768px) {
+  .button {
+    padding: 12px 16px !important;
+    margin: 4px 2px !important;
+    min-height: 44px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .button .text-wrapper,
+  .button .div {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+
+  /* Override all button padding styles on mobile */
+  .button.no-icon.small-true,
+  .button.only.small-true,
+  .button.small-true.trailing,
+  .button.small-true.leading,
+  .button.secondary.small-false.leading,
+  .button.secondary.small-false.no-icon,
+  .button.small-false.tertiary.leading,
+  .button.primary.small-false.leading,
+  .button.secondary.small-false.only,
+  .button.small-false.tertiary.trailing,
+  .button.secondary.small-false.trailing,
+  .button.primary.small-false.no-icon,
+  .button.primary.small-false.trailing,
+  .button.primary.small-false.only,
+  .button.small-false.no-icon.tertiary,
+  .button.small-false.only.tertiary {
+    padding: 12px 16px !important;
+    min-height: 44px !important;
+  }
 }
