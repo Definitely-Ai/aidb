@@ -19,18 +19,8 @@ export const CompaniesSolutions = () => {
     <div
       className="companies-solutions"
       style={{
-        minHeight:
-          isMobile
-            ? "7399px"
-            : !isMobile
-              ? "6108px"
-              : undefined,
-        minWidth:
-          isMobile
-            ? "395px"
-            : !isMobile
-              ? "1460px"
-              : undefined,
+        minHeight: isMobile ? "7399px" : !isMobile ? "6108px" : undefined,
+        minWidth: isMobile ? "395px" : !isMobile ? "1460px" : undefined,
       }}
     >
       <div className="companies-and">
@@ -40,7 +30,6 @@ export const CompaniesSolutions = () => {
             padding: isMobile ? "0px 0px 38px" : undefined,
           }}
           {...themeProps}
-          
         >
           {isMobile && (
             <>
@@ -56,14 +45,9 @@ export const CompaniesSolutions = () => {
 
               <div className="row-8">
                 <div className="column-12">
-                  <a
-                    className="link-text-wrapper-7"
-                    href="aidreambuilders.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  <Link className="link-text-wrapper-7" to="/">
                     <div className="link-text-7">Home</div>
-                  </a>
+                  </Link>
 
                   <Link className="link-text-wrapper-7" to="/about-us-desktop">
                     <div className="link-text-7">About Us</div>
@@ -107,14 +91,9 @@ export const CompaniesSolutions = () => {
                 <div className="div-6">
                   <CompanyLogo alternate={false} className="company-logo-4" />
                   <div className="column-13">
-                    <a
-                      className="link-text-wrapper-8"
-                      href="aidreambuilders.com"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
+                    <Link className="link-text-wrapper-8" to="/">
                       <div className="link-text-8">Home</div>
-                    </a>
+                    </Link>
 
                     <Link
                       className="link-text-wrapper-8"
@@ -162,60 +141,33 @@ export const CompaniesSolutions = () => {
         <div
           className="header-7"
           style={{
-            backgroundImage:
-              isMobile
-                ? "url(/img/header-65-1-2x.png)"
-                : !isMobile
-                  ? "url(/img/header-65-1.png)"
-                  : undefined,
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
+            backgroundImage: isMobile
+              ? "url(/img/header-65-1-2x.png)"
+              : !isMobile
+              ? "url(/img/header-65-1.png)"
+              : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             justifyContent: !isMobile ? "center" : undefined,
-            width:
-              isMobile
-                ? "375px"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            width: isMobile ? "375px" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-18"
             style={{
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="section-title-wrapper"
               style={{
-                gap:
-                  isMobile
-                    ? "24px"
-                    : !isMobile
-                      ? "32px"
-                      : undefined,
+                gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
               }}
             >
               <div
                 className="section-title-7"
                 style={{
-                  gap:
-                    isMobile
-                      ? "12px"
-                      : !isMobile
-                        ? "16px"
-                        : undefined,
+                  gap: isMobile ? "12px" : !isMobile ? "16px" : undefined,
                 }}
               >
                 {!isMobile && <div className="tagline-wrapper-4" />}
@@ -223,12 +175,7 @@ export const CompaniesSolutions = () => {
                 <div
                   className="content-32"
                   style={{
-                    gap:
-                      !isMobile
-                        ? "24px"
-                        : isMobile
-                          ? "20px"
-                          : undefined,
+                    gap: !isMobile ? "24px" : isMobile ? "20px" : undefined,
                   }}
                 >
                   <div className="text-wrapper-14">Transform Your Vision</div>
@@ -236,42 +183,36 @@ export const CompaniesSolutions = () => {
                   <p
                     className="text-wrapper-15"
                     style={{
-                      fontFamily:
-                        !isMobile
-                          ? "var(--text-medium-normal-font-family)"
-                          : isMobile
-                            ? "var(--text-regular-normal-font-family)"
-                            : undefined,
-                      fontSize:
-                        !isMobile
-                          ? "var(--text-medium-normal-font-size)"
-                          : isMobile
-                            ? "var(--text-regular-normal-font-size)"
-                            : undefined,
-                      fontStyle:
-                        !isMobile
-                          ? "var(--text-medium-normal-font-style)"
-                          : isMobile
-                            ? "var(--text-regular-normal-font-style)"
-                            : undefined,
-                      fontWeight:
-                        !isMobile
-                          ? "var(--text-medium-normal-font-weight)"
-                          : isMobile
-                            ? "var(--text-regular-normal-font-weight)"
-                            : undefined,
-                      letterSpacing:
-                        !isMobile
-                          ? "var(--text-medium-normal-letter-spacing)"
-                          : isMobile
-                            ? "var(--text-regular-normal-letter-spacing)"
-                            : undefined,
-                      lineHeight:
-                        !isMobile
-                          ? "var(--text-medium-normal-line-height)"
-                          : isMobile
-                            ? "var(--text-regular-normal-line-height)"
-                            : undefined,
+                      fontFamily: !isMobile
+                        ? "var(--text-medium-normal-font-family)"
+                        : isMobile
+                        ? "var(--text-regular-normal-font-family)"
+                        : undefined,
+                      fontSize: !isMobile
+                        ? "var(--text-medium-normal-font-size)"
+                        : isMobile
+                        ? "var(--text-regular-normal-font-size)"
+                        : undefined,
+                      fontStyle: !isMobile
+                        ? "var(--text-medium-normal-font-style)"
+                        : isMobile
+                        ? "var(--text-regular-normal-font-style)"
+                        : undefined,
+                      fontWeight: !isMobile
+                        ? "var(--text-medium-normal-font-weight)"
+                        : isMobile
+                        ? "var(--text-regular-normal-font-weight)"
+                        : undefined,
+                      letterSpacing: !isMobile
+                        ? "var(--text-medium-normal-letter-spacing)"
+                        : isMobile
+                        ? "var(--text-regular-normal-letter-spacing)"
+                        : undefined,
+                      lineHeight: !isMobile
+                        ? "var(--text-medium-normal-line-height)"
+                        : isMobile
+                        ? "var(--text-regular-normal-line-height)"
+                        : undefined,
                     }}
                   >
                     Explore our groundbreaking companies and solutions that are
@@ -286,62 +227,38 @@ export const CompaniesSolutions = () => {
         <div
           className="layout-5"
           style={{
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
-            width:
-              isMobile
-                ? "375px"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "375px" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-19"
             style={{
-              alignItems:
-                isMobile
-                  ? "center"
-                  : !isMobile
-                    ? "flex-start"
-                    : undefined,
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
-              width:
-                isMobile
-                  ? "100%"
-                  : !isMobile
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              alignItems: isMobile
+                ? "center"
+                : !isMobile
+                ? "flex-start"
+                : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="component-8"
               style={{
-                alignItems:
-                  isMobile
-                    ? "flex-start"
-                    : !isMobile
-                      ? "center"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
                 flex: isMobile ? "0 0 auto" : undefined,
                 flexDirection: isMobile ? "column" : undefined,
-                gap:
-                  isMobile
-                    ? "48px"
-                    : !isMobile
-                      ? "80px"
-                      : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
                 height: !isMobile ? "640px" : undefined,
               }}
             >
@@ -349,42 +266,22 @@ export const CompaniesSolutions = () => {
                 className="content-left-2"
                 style={{
                   alignSelf: isMobile ? "stretch" : undefined,
-                  flex:
-                    isMobile
-                      ? "0 0 auto"
-                      : !isMobile
-                        ? "1"
-                        : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
                   flexGrow: !isMobile ? "1" : undefined,
-                  gap:
-                    isMobile
-                      ? "24px"
-                      : !isMobile
-                        ? "32px"
-                        : undefined,
+                  gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
                   width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="section-title-8"
                   style={{
-                    gap:
-                      !isMobile
-                        ? "16px"
-                        : isMobile
-                          ? "12px"
-                          : undefined,
+                    gap: !isMobile ? "16px" : isMobile ? "12px" : undefined,
                   }}
                 >
                   <div
                     className="content-33"
                     style={{
-                      gap:
-                        !isMobile
-                          ? "24px"
-                          : isMobile
-                            ? "20px"
-                            : undefined,
+                      gap: !isMobile ? "24px" : isMobile ? "20px" : undefined,
                     }}
                   >
                     <p className="text-wrapper-16">
@@ -394,42 +291,36 @@ export const CompaniesSolutions = () => {
                     <p
                       className="text-11"
                       style={{
-                        fontFamily:
-                          !isMobile
-                            ? "var(--text-medium-normal-font-family)"
-                            : isMobile
-                              ? "var(--text-regular-normal-font-family)"
-                              : undefined,
-                        fontSize:
-                          !isMobile
-                            ? "var(--text-medium-normal-font-size)"
-                            : isMobile
-                              ? "var(--text-regular-normal-font-size)"
-                              : undefined,
-                        fontStyle:
-                          !isMobile
-                            ? "var(--text-medium-normal-font-style)"
-                            : isMobile
-                              ? "var(--text-regular-normal-font-style)"
-                              : undefined,
-                        fontWeight:
-                          !isMobile
-                            ? "var(--text-medium-normal-font-weight)"
-                            : isMobile
-                              ? "var(--text-regular-normal-font-weight)"
-                              : undefined,
-                        letterSpacing:
-                          !isMobile
-                            ? "var(--text-medium-normal-letter-spacing)"
-                            : isMobile
-                              ? "var(--text-regular-normal-letter-spacing)"
-                              : undefined,
-                        lineHeight:
-                          !isMobile
-                            ? "var(--text-medium-normal-line-height)"
-                            : isMobile
-                              ? "var(--text-regular-normal-line-height)"
-                              : undefined,
+                        fontFamily: !isMobile
+                          ? "var(--text-medium-normal-font-family)"
+                          : isMobile
+                          ? "var(--text-regular-normal-font-family)"
+                          : undefined,
+                        fontSize: !isMobile
+                          ? "var(--text-medium-normal-font-size)"
+                          : isMobile
+                          ? "var(--text-regular-normal-font-size)"
+                          : undefined,
+                        fontStyle: !isMobile
+                          ? "var(--text-medium-normal-font-style)"
+                          : isMobile
+                          ? "var(--text-regular-normal-font-style)"
+                          : undefined,
+                        fontWeight: !isMobile
+                          ? "var(--text-medium-normal-font-weight)"
+                          : isMobile
+                          ? "var(--text-regular-normal-font-weight)"
+                          : undefined,
+                        letterSpacing: !isMobile
+                          ? "var(--text-medium-normal-letter-spacing)"
+                          : isMobile
+                          ? "var(--text-regular-normal-letter-spacing)"
+                          : undefined,
+                        lineHeight: !isMobile
+                          ? "var(--text-medium-normal-line-height)"
+                          : isMobile
+                          ? "var(--text-regular-normal-line-height)"
+                          : undefined,
                       }}
                     >
                       At AI Dream Builders, we specialize in crafting tailored
@@ -470,12 +361,7 @@ export const CompaniesSolutions = () => {
                   alignSelf: isMobile ? "stretch" : undefined,
                   flex: !isMobile ? "1" : undefined,
                   flexGrow: !isMobile ? "1" : undefined,
-                  height:
-                    isMobile
-                      ? "348px"
-                      : !isMobile
-                        ? "640px"
-                        : undefined,
+                  height: isMobile ? "348px" : !isMobile ? "640px" : undefined,
                   width: isMobile ? "100%" : undefined,
                 }}
                 alt="Placeholder image"
@@ -483,8 +369,8 @@ export const CompaniesSolutions = () => {
                   isMobile
                     ? "/img/placeholder-image-17.png"
                     : !isMobile
-                      ? "/img/placeholder-image-12.png"
-                      : undefined
+                    ? "/img/placeholder-image-12.png"
+                    : undefined
                 }
               />
             </div>
@@ -494,48 +380,26 @@ export const CompaniesSolutions = () => {
         <div
           className="layout-6"
           style={{
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
-            width:
-              isMobile
-                ? "375px"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "375px" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-20"
             style={{
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
-              width:
-                isMobile
-                  ? "100%"
-                  : !isMobile
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="section-title-9"
               style={{
-                gap:
-                  isMobile
-                    ? "12px"
-                    : !isMobile
-                      ? "16px"
-                      : undefined,
+                gap: isMobile ? "12px" : !isMobile ? "16px" : undefined,
               }}
             >
               <div className="tagline-wrapper-5">
@@ -545,12 +409,7 @@ export const CompaniesSolutions = () => {
               <div
                 className="content-34"
                 style={{
-                  gap:
-                    isMobile
-                      ? "20px"
-                      : !isMobile
-                        ? "24px"
-                        : undefined,
+                  gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                 }}
               >
                 <p className="text-wrapper-16">
@@ -560,42 +419,36 @@ export const CompaniesSolutions = () => {
                 <p
                   className="lorem-ipsum-dolor-3"
                   style={{
-                    fontFamily:
-                      isMobile
-                        ? "var(--text-regular-normal-font-family)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-family)"
-                          : undefined,
-                    fontSize:
-                      isMobile
-                        ? "var(--text-regular-normal-font-size)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-size)"
-                          : undefined,
-                    fontStyle:
-                      isMobile
-                        ? "var(--text-regular-normal-font-style)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-style)"
-                          : undefined,
-                    fontWeight:
-                      isMobile
-                        ? "var(--text-regular-normal-font-weight)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-weight)"
-                          : undefined,
-                    letterSpacing:
-                      isMobile
-                        ? "var(--text-regular-normal-letter-spacing)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-letter-spacing)"
-                          : undefined,
-                    lineHeight:
-                      isMobile
-                        ? "var(--text-regular-normal-line-height)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-line-height)"
-                          : undefined,
+                    fontFamily: isMobile
+                      ? "var(--text-regular-normal-font-family)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-family)"
+                      : undefined,
+                    fontSize: isMobile
+                      ? "var(--text-regular-normal-font-size)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-size)"
+                      : undefined,
+                    fontStyle: isMobile
+                      ? "var(--text-regular-normal-font-style)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-style)"
+                      : undefined,
+                    fontWeight: isMobile
+                      ? "var(--text-regular-normal-font-weight)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-weight)"
+                      : undefined,
+                    letterSpacing: isMobile
+                      ? "var(--text-regular-normal-letter-spacing)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-letter-spacing)"
+                      : undefined,
+                    lineHeight: isMobile
+                      ? "var(--text-regular-normal-line-height)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-line-height)"
+                      : undefined,
                   }}
                 >
                   At AI Dream Builders, we specialize in creating innovative
@@ -609,12 +462,7 @@ export const CompaniesSolutions = () => {
             <div
               className="row-9"
               style={{
-                gap:
-                  isMobile
-                    ? "32px"
-                    : !isMobile
-                      ? "64px"
-                      : undefined,
+                gap: isMobile ? "32px" : !isMobile ? "64px" : undefined,
               }}
             >
               {isMobile && (
@@ -804,62 +652,34 @@ export const CompaniesSolutions = () => {
         <div
           className="layout-7"
           style={{
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
-            width:
-              isMobile
-                ? "375px"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "375px" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-21"
             style={{
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
-              width:
-                isMobile
-                  ? "100%"
-                  : !isMobile
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="component-9"
               style={{
-                alignItems:
-                  isMobile
-                    ? "flex-start"
-                    : !isMobile
-                      ? "center"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
                 alignSelf: isMobile ? "stretch" : undefined,
                 flexDirection: isMobile ? "column" : undefined,
-                gap:
-                  isMobile
-                    ? "48px"
-                    : !isMobile
-                      ? "80px"
-                      : undefined,
-                width:
-                  isMobile
-                    ? "100%"
-                    : !isMobile
-                      ? "1280px"
-                      : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+                width: isMobile ? "100%" : !isMobile ? "1280px" : undefined,
               }}
             >
               {isMobile && (
@@ -966,54 +786,35 @@ export const CompaniesSolutions = () => {
         <div
           className="layout-8"
           style={{
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
-            padding:
-              isMobile
-                ? "30px var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
-                : !isMobile
-                  ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
-                  : undefined,
-            width:
-              isMobile
-                ? "375px"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            padding: isMobile
+              ? "30px var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
+              : !isMobile
+              ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
+              : undefined,
+            width: isMobile ? "375px" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-22"
             style={{
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
-              width:
-                isMobile
-                  ? "100%"
-                  : !isMobile
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="component-10"
               style={{
-                alignItems:
-                  isMobile
-                    ? "flex-start"
-                    : !isMobile
-                      ? "center"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
                 flexDirection: isMobile ? "column" : undefined,
                 gap: !isMobile ? "80px" : undefined,
               }}
@@ -1022,31 +823,16 @@ export const CompaniesSolutions = () => {
                 className="content-39"
                 style={{
                   alignSelf: isMobile ? "stretch" : undefined,
-                  flex:
-                    isMobile
-                      ? "0 0 auto"
-                      : !isMobile
-                        ? "1"
-                        : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
                   flexGrow: !isMobile ? "1" : undefined,
-                  gap:
-                    isMobile
-                      ? "20px"
-                      : !isMobile
-                        ? "32px"
-                        : undefined,
+                  gap: isMobile ? "20px" : !isMobile ? "32px" : undefined,
                   width: isMobile ? "100%" : undefined,
                 }}
               >
                 <div
                   className="content-40"
                   style={{
-                    gap:
-                      isMobile
-                        ? "20px"
-                        : !isMobile
-                          ? "24px"
-                          : undefined,
+                    gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                   }}
                 >
                   <p className="heading-9">
@@ -1057,42 +843,36 @@ export const CompaniesSolutions = () => {
                   <p
                     className="text-14"
                     style={{
-                      fontFamily:
-                        isMobile
-                          ? "var(--text-regular-normal-font-family)"
-                          : !isMobile
-                            ? "var(--text-medium-normal-font-family)"
-                            : undefined,
-                      fontSize:
-                        isMobile
-                          ? "var(--text-regular-normal-font-size)"
-                          : !isMobile
-                            ? "var(--text-medium-normal-font-size)"
-                            : undefined,
-                      fontStyle:
-                        isMobile
-                          ? "var(--text-regular-normal-font-style)"
-                          : !isMobile
-                            ? "var(--text-medium-normal-font-style)"
-                            : undefined,
-                      fontWeight:
-                        isMobile
-                          ? "var(--text-regular-normal-font-weight)"
-                          : !isMobile
-                            ? "var(--text-medium-normal-font-weight)"
-                            : undefined,
-                      letterSpacing:
-                        isMobile
-                          ? "var(--text-regular-normal-letter-spacing)"
-                          : !isMobile
-                            ? "var(--text-medium-normal-letter-spacing)"
-                            : undefined,
-                      lineHeight:
-                        isMobile
-                          ? "var(--text-regular-normal-line-height)"
-                          : !isMobile
-                            ? "var(--text-medium-normal-line-height)"
-                            : undefined,
+                      fontFamily: isMobile
+                        ? "var(--text-regular-normal-font-family)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-family)"
+                        : undefined,
+                      fontSize: isMobile
+                        ? "var(--text-regular-normal-font-size)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-size)"
+                        : undefined,
+                      fontStyle: isMobile
+                        ? "var(--text-regular-normal-font-style)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-style)"
+                        : undefined,
+                      fontWeight: isMobile
+                        ? "var(--text-regular-normal-font-weight)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-font-weight)"
+                        : undefined,
+                      letterSpacing: isMobile
+                        ? "var(--text-regular-normal-letter-spacing)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-letter-spacing)"
+                        : undefined,
+                      lineHeight: isMobile
+                        ? "var(--text-regular-normal-line-height)"
+                        : !isMobile
+                        ? "var(--text-medium-normal-line-height)"
+                        : undefined,
                     }}
                   >
                     SocialEdge AI is designed specifically for real estate
@@ -1132,12 +912,7 @@ export const CompaniesSolutions = () => {
                   alignSelf: isMobile ? "stretch" : undefined,
                   flex: !isMobile ? "1" : undefined,
                   flexGrow: !isMobile ? "1" : undefined,
-                  height:
-                    isMobile
-                      ? "348px"
-                      : !isMobile
-                        ? "640px"
-                        : undefined,
+                  height: isMobile ? "348px" : !isMobile ? "640px" : undefined,
                   width: isMobile ? "100%" : undefined,
                 }}
                 alt="Placeholder image"
@@ -1145,8 +920,8 @@ export const CompaniesSolutions = () => {
                   isMobile
                     ? "/img/placeholder-image-20.png"
                     : !isMobile
-                      ? "/img/placeholder-image-15.png"
-                      : undefined
+                    ? "/img/placeholder-image-15.png"
+                    : undefined
                 }
               />
             </div>
@@ -1156,61 +931,37 @@ export const CompaniesSolutions = () => {
         <div
           className="layout-9"
           style={{
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
-            padding:
-              isMobile
-                ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) 0px var(--spacing-sizing-page-padding-padding-global)"
-                : !isMobile
-                  ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
-                  : undefined,
-            width:
-              isMobile
-                ? "375px"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            padding: isMobile
+              ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) 0px var(--spacing-sizing-page-padding-padding-global)"
+              : !isMobile
+              ? "var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global) var(--spacing-sizing-section-padding-padding-section-large) var(--spacing-sizing-page-padding-padding-global)"
+              : undefined,
+            width: isMobile ? "375px" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-23"
             style={{
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
-              width:
-                isMobile
-                  ? "100%"
-                  : !isMobile
-                    ? "var(--spacing-sizing-container-container-large)"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+              width: isMobile
+                ? "100%"
+                : !isMobile
+                ? "var(--spacing-sizing-container-container-large)"
+                : undefined,
             }}
           >
             <div
               className="component-11"
               style={{
-                alignItems:
-                  isMobile
-                    ? "flex-start"
-                    : !isMobile
-                      ? "center"
-                      : undefined,
+                alignItems: isMobile
+                  ? "flex-start"
+                  : !isMobile
+                  ? "center"
+                  : undefined,
                 flexDirection: isMobile ? "column" : undefined,
-                gap:
-                  isMobile
-                    ? "48px"
-                    : !isMobile
-                      ? "80px"
-                      : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
               }}
             >
               {isMobile && (
@@ -1271,53 +1022,27 @@ export const CompaniesSolutions = () => {
         <div
           className="CTA-4"
           style={{
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
-            width:
-              isMobile
-                ? "375px"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "375px" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-24"
             style={{
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="content-41"
               style={{
-                gap:
-                  isMobile
-                    ? "24px"
-                    : !isMobile
-                      ? "32px"
-                      : undefined,
+                gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
               }}
             >
               <div
                 className="content-42"
                 style={{
-                  gap:
-                    isMobile
-                      ? "20px"
-                      : !isMobile
-                        ? "24px"
-                        : undefined,
+                  gap: isMobile ? "20px" : !isMobile ? "24px" : undefined,
                 }}
               >
                 <p className="text-wrapper-18">
@@ -1327,42 +1052,36 @@ export const CompaniesSolutions = () => {
                 <p
                   className="text-15"
                   style={{
-                    fontFamily:
-                      isMobile
-                        ? "var(--text-regular-normal-font-family)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-family)"
-                          : undefined,
-                    fontSize:
-                      isMobile
-                        ? "var(--text-regular-normal-font-size)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-size)"
-                          : undefined,
-                    fontStyle:
-                      isMobile
-                        ? "var(--text-regular-normal-font-style)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-style)"
-                          : undefined,
-                    fontWeight:
-                      isMobile
-                        ? "var(--text-regular-normal-font-weight)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-font-weight)"
-                          : undefined,
-                    letterSpacing:
-                      isMobile
-                        ? "var(--text-regular-normal-letter-spacing)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-letter-spacing)"
-                          : undefined,
-                    lineHeight:
-                      isMobile
-                        ? "var(--text-regular-normal-line-height)"
-                        : !isMobile
-                          ? "var(--text-medium-normal-line-height)"
-                          : undefined,
+                    fontFamily: isMobile
+                      ? "var(--text-regular-normal-font-family)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-family)"
+                      : undefined,
+                    fontSize: isMobile
+                      ? "var(--text-regular-normal-font-size)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-size)"
+                      : undefined,
+                    fontStyle: isMobile
+                      ? "var(--text-regular-normal-font-style)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-style)"
+                      : undefined,
+                    fontWeight: isMobile
+                      ? "var(--text-regular-normal-font-weight)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-font-weight)"
+                      : undefined,
+                    letterSpacing: isMobile
+                      ? "var(--text-regular-normal-letter-spacing)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-letter-spacing)"
+                      : undefined,
+                    lineHeight: isMobile
+                      ? "var(--text-regular-normal-line-height)"
+                      : !isMobile
+                      ? "var(--text-medium-normal-line-height)"
+                      : undefined,
                   }}
                 >
                   Join us to unlock innovative AI solutions tailored to your
@@ -1398,61 +1117,34 @@ export const CompaniesSolutions = () => {
           className="footer-4"
           style={{
             alignSelf: isMobile ? "stretch" : undefined,
-            gap:
-              isMobile
-                ? "48px"
-                : !isMobile
-                  ? "80px"
-                  : undefined,
-            width:
-              isMobile
-                ? "100%"
-                : !isMobile
-                  ? "1440px"
-                  : undefined,
+            gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
+            width: isMobile ? "100%" : !isMobile ? "1440px" : undefined,
           }}
           {...themeProps}
-          
         >
           <div
             className="container-25"
             style={{
-              gap:
-                isMobile
-                  ? "48px"
-                  : !isMobile
-                    ? "80px"
-                    : undefined,
+              gap: isMobile ? "48px" : !isMobile ? "80px" : undefined,
             }}
           >
             <div
               className="content-43"
               style={{
                 flexDirection: isMobile ? "column" : undefined,
-                gap:
-                  isMobile
-                    ? "48px"
-                    : !isMobile
-                      ? "32px"
-                      : undefined,
+                gap: isMobile ? "48px" : !isMobile ? "32px" : undefined,
               }}
             >
               <div
                 className="logo-2"
                 style={{
-                  alignItems:
-                    isMobile
-                      ? "center"
-                      : !isMobile
-                        ? "flex-start"
-                        : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
                   alignSelf: isMobile ? "stretch" : undefined,
-                  flex:
-                    isMobile
-                      ? "0 0 auto"
-                      : !isMobile
-                        ? "1"
-                        : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
                   flexGrow: !isMobile ? "1" : undefined,
                   width: isMobile ? "100%" : undefined,
                 }}
@@ -1463,26 +1155,19 @@ export const CompaniesSolutions = () => {
               <div
                 className="links-4"
                 style={{
-                  alignItems:
-                    isMobile
-                      ? "center"
-                      : !isMobile
-                        ? "flex-start"
-                        : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
                   alignSelf: isMobile ? "stretch" : undefined,
-                  display:
-                    isMobile
-                      ? "flex"
-                      : !isMobile
-                        ? "inline-flex"
-                        : undefined,
+                  display: isMobile
+                    ? "flex"
+                    : !isMobile
+                    ? "inline-flex"
+                    : undefined,
                   flexDirection: isMobile ? "column" : undefined,
-                  gap:
-                    isMobile
-                      ? "24px"
-                      : !isMobile
-                        ? "32px"
-                        : undefined,
+                  gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
                   justifyContent: !isMobile ? "center" : undefined,
                   width: isMobile ? "100%" : undefined,
                 }}
@@ -1532,26 +1217,19 @@ export const CompaniesSolutions = () => {
               <a
                 className="facebook-3-wrapper"
                 style={{
-                  alignItems:
-                    isMobile
-                      ? "flex-start"
-                      : !isMobile
-                        ? "center"
-                        : undefined,
+                  alignItems: isMobile
+                    ? "flex-start"
+                    : !isMobile
+                    ? "center"
+                    : undefined,
                   alignSelf: isMobile ? "stretch" : undefined,
-                  flex:
-                    isMobile
-                      ? "0 0 auto"
-                      : !isMobile
-                        ? "1"
-                        : undefined,
+                  flex: isMobile ? "0 0 auto" : !isMobile ? "1" : undefined,
                   flexGrow: !isMobile ? "1" : undefined,
-                  justifyContent:
-                    isMobile
-                      ? "center"
-                      : !isMobile
-                        ? "flex-end"
-                        : undefined,
+                  justifyContent: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-end"
+                    : undefined,
                   width: isMobile ? "100%" : undefined,
                 }}
                 href="https://www.facebook.com/profile.php?id=61560854473620"
@@ -1565,12 +1243,7 @@ export const CompaniesSolutions = () => {
             <div
               className="credits-4"
               style={{
-                gap:
-                  isMobile
-                    ? "24px"
-                    : !isMobile
-                      ? "32px"
-                      : undefined,
+                gap: isMobile ? "24px" : !isMobile ? "32px" : undefined,
                 padding: isMobile ? "0px 0px 16px" : undefined,
               }}
             >
@@ -1581,65 +1254,52 @@ export const CompaniesSolutions = () => {
                   isMobile
                     ? "/img/divider-2.svg"
                     : !isMobile
-                      ? "/img/divider.svg"
-                      : undefined
+                    ? "/img/divider.svg"
+                    : undefined
                 }
               />
 
               <div
                 className="row-12"
                 style={{
-                  alignItems:
-                    isMobile
-                      ? "center"
-                      : !isMobile
-                        ? "flex-start"
-                        : undefined,
+                  alignItems: isMobile
+                    ? "center"
+                    : !isMobile
+                    ? "flex-start"
+                    : undefined,
                   flexDirection: isMobile ? "column" : undefined,
-                  gap:
-                    isMobile
-                      ? "32px"
-                      : !isMobile
-                        ? "24px"
-                        : undefined,
+                  gap: isMobile ? "32px" : !isMobile ? "24px" : undefined,
                 }}
               >
                 <div
                   className="footer-links-4"
                   style={{
                     alignItems: isMobile ? "center" : undefined,
-                    color:
-                      !isMobile
-                        ? "var(--color-schemes-color-scheme-1-text)"
-                        : undefined,
+                    color: !isMobile
+                      ? "var(--color-schemes-color-scheme-1-text)"
+                      : undefined,
                     display: isMobile ? "inline-flex" : undefined,
                     flex: isMobile ? "0 0 auto" : undefined,
                     flexDirection: isMobile ? "column" : undefined,
-                    fontFamily:
-                      !isMobile
-                        ? "var(--text-small-normal-font-family)"
-                        : undefined,
-                    fontSize:
-                      !isMobile
-                        ? "var(--text-small-normal-font-size)"
-                        : undefined,
-                    fontStyle:
-                      !isMobile
-                        ? "var(--text-small-normal-font-style)"
-                        : undefined,
-                    fontWeight:
-                      !isMobile
-                        ? "var(--text-small-normal-font-weight)"
-                        : undefined,
+                    fontFamily: !isMobile
+                      ? "var(--text-small-normal-font-family)"
+                      : undefined,
+                    fontSize: !isMobile
+                      ? "var(--text-small-normal-font-size)"
+                      : undefined,
+                    fontStyle: !isMobile
+                      ? "var(--text-small-normal-font-style)"
+                      : undefined,
+                    fontWeight: !isMobile
+                      ? "var(--text-small-normal-font-weight)"
+                      : undefined,
                     gap: isMobile ? "16px" : undefined,
-                    letterSpacing:
-                      !isMobile
-                        ? "var(--text-small-normal-letter-spacing)"
-                        : undefined,
-                    lineHeight:
-                      !isMobile
-                        ? "var(--text-small-normal-line-height)"
-                        : undefined,
+                    letterSpacing: !isMobile
+                      ? "var(--text-small-normal-letter-spacing)"
+                      : undefined,
+                    lineHeight: !isMobile
+                      ? "var(--text-small-normal-line-height)"
+                      : undefined,
                     marginTop: !isMobile ? "-1.00px" : undefined,
                     whiteSpace: !isMobile ? "nowrap" : undefined,
                     width: !isMobile ? "fit-content" : undefined,
@@ -1659,45 +1319,38 @@ export const CompaniesSolutions = () => {
                 <div
                   className="element-AI-dream-4"
                   style={{
-                    fontFamily:
-                      isMobile
-                        ? "var(--text-small-normal-font-family)"
-                        : !isMobile
-                          ? "var(--text-small-link-font-family)"
-                          : undefined,
-                    fontSize:
-                      isMobile
-                        ? "var(--text-small-normal-font-size)"
-                        : !isMobile
-                          ? "var(--text-small-link-font-size)"
-                          : undefined,
-                    fontStyle:
-                      isMobile
-                        ? "var(--text-small-normal-font-style)"
-                        : !isMobile
-                          ? "var(--text-small-link-font-style)"
-                          : undefined,
-                    fontWeight:
-                      isMobile
-                        ? "var(--text-small-normal-font-weight)"
-                        : !isMobile
-                          ? "var(--text-small-link-font-weight)"
-                          : undefined,
-                    letterSpacing:
-                      isMobile
-                        ? "var(--text-small-normal-letter-spacing)"
-                        : !isMobile
-                          ? "var(--text-small-link-letter-spacing)"
-                          : undefined,
-                    lineHeight:
-                      isMobile
-                        ? "var(--text-small-normal-line-height)"
-                        : !isMobile
-                          ? "var(--text-small-link-line-height)"
-                          : undefined,
+                    fontFamily: isMobile
+                      ? "var(--text-small-normal-font-family)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-family)"
+                      : undefined,
+                    fontSize: isMobile
+                      ? "var(--text-small-normal-font-size)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-size)"
+                      : undefined,
+                    fontStyle: isMobile
+                      ? "var(--text-small-normal-font-style)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-style)"
+                      : undefined,
+                    fontWeight: isMobile
+                      ? "var(--text-small-normal-font-weight)"
+                      : !isMobile
+                      ? "var(--text-small-link-font-weight)"
+                      : undefined,
+                    letterSpacing: isMobile
+                      ? "var(--text-small-normal-letter-spacing)"
+                      : !isMobile
+                      ? "var(--text-small-link-letter-spacing)"
+                      : undefined,
+                    lineHeight: isMobile
+                      ? "var(--text-small-normal-line-height)"
+                      : !isMobile
+                      ? "var(--text-small-link-line-height)"
+                      : undefined,
                     marginTop: !isMobile ? "-1.00px" : undefined,
-                    textDecoration:
-                      !isMobile ? "underline" : undefined,
+                    textDecoration: !isMobile ? "underline" : undefined,
                   }}
                 >
                   {isMobile && (

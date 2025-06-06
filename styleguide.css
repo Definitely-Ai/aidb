@@ -712,6 +712,96 @@ html {
   }
 }
 
+/* Desktop centering and layout fixes */
+@media (min-width: 769px) {
+  /* Center all main page containers */
+  .home-mobile,
+  .about-us-desktop,
+  .contact-us-desktop,
+  .showcase-desktop,
+  .companies-solutions,
+  [class*="screen-"],
+  [class*="frame-"] {
+    margin: 0 auto !important;
+    max-width: 1440px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Center inner content containers */
+  .companies-and,
+  .about-us-mobile,
+  .contact-mobile,
+  .showcase-mobile,
+  .home-mobile > div,
+  [class*="container"],
+  [class*="layout"],
+  [class*="header-"],
+  [class*="section"] {
+    margin: 0 auto !important;
+    max-width: 1440px !important;
+    width: 100% !important;
+  }
+
+  /* Ensure navigation spans full width but centers content */
+  [class*="navbar"],
+  [class*="header"][class*="header-"] {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  [class*="navbar"] > *,
+  [class*="header"][class*="header-"] > * {
+    max-width: 1440px !important;
+    width: 100% !important;
+  }
+
+  /* Center page content horizontally */
+  body {
+    display: flex !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    background-color: #ffffff !important;
+  }
+
+  #app {
+    max-width: 1440px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Additional Companies Solutions centering */
+  .companies-solutions .companies-and {
+    max-width: 1440px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .companies-solutions .header-7,
+  .companies-solutions .layout-5,
+  .companies-solutions .layout-6,
+  .companies-solutions .layout-7,
+  .companies-solutions .layout-8,
+  .companies-solutions .layout-9,
+  .companies-solutions .CTA-4,
+  .companies-solutions .footer-4 {
+    margin: 0 auto !important;
+    max-width: 1440px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
 /* Universal mobile responsiveness fixes */
 @media (max-width: 768px) {
   /* Global headline fixes for mobile */
