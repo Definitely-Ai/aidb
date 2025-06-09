@@ -23,10 +23,9 @@ export const AboutUsDesktop = () => {
       className="about-us-desktop"
       style={{
         minHeight: isMobile ? "100vh" : !isMobile ? "3465.88px" : undefined,
-        minWidth: !isMobile ? "1460px" : undefined,
-        width: isMobile ? "100%" : undefined,
-        maxWidth: isMobile ? "100vw" : undefined,
-        overflowX: isMobile ? "hidden" : undefined,
+        width: "100%",
+        maxWidth: "100vw",
+        overflowX: "hidden",
       }}
     >
       <div className="about-us-mobile">

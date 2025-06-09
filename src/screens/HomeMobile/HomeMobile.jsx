@@ -25,10 +25,9 @@ export const HomeMobile = () => {
         display: isMobile ? "inline-flex" : "flex",
         height: !isMobile ? "4186px" : undefined,
         minHeight: isMobile ? "100vh" : undefined,
-        minWidth: !isMobile ? "1460px" : undefined,
-        width: isMobile ? "100%" : undefined,
-        maxWidth: isMobile ? "100vw" : undefined,
-        overflowX: isMobile ? "hidden" : undefined,
+        width: "100%",
+        maxWidth: "100vw",
+        overflowX: "hidden",
       }}
     >
       <div className="div-3">

@@ -712,8 +712,94 @@ html {
   }
 }
 
+/* Tablet and small laptop fixes for medium screen sizes */
+@media (min-width: 769px) and (max-width: 1439px) {
+  /* Ensure no horizontal overflow on medium screens */
+  .home-mobile,
+  .about-us-desktop,
+  .contact-us-desktop,
+  .showcase-desktop,
+  .companies-solutions,
+  [class*="screen-"],
+  [class*="frame-"] {
+    max-width: 100vw !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Ensure inner containers are responsive on medium screens */
+  .home-mobile > div,
+  [class*="container"],
+  [class*="layout"],
+  [class*="header-"],
+  [class*="section"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Flexible layout for content that might overflow */
+  [class*="content"],
+  [class*="component"] {
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Responsive images on medium screens */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* Ensure text doesn't cause overflow */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  [class*="heading"],
+  [class*="text-wrapper"] {
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Fix any hardcoded width elements that might cause overflow */
+  [style*="width: 1440px"],
+  [style*="width:1440px"] {
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Ensure buttons and navigation work well on medium screens */
+  .actions,
+  .actions-2,
+  .actions-3,
+  .actions-4,
+  .actions-5,
+  .actions-6,
+  .actions-7,
+  .actions-8,
+  .actions-9,
+  .actions-10,
+  .actions-11,
+  .actions-12,
+  .actions-13 {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: center !important;
+  }
+}
+
 /* Desktop centering and layout fixes */
-@media (min-width: 769px) {
+@media (min-width: 1440px) {
   /* Center all main page containers */
   .home-mobile,
   .about-us-desktop,
