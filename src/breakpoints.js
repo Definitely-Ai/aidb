@@ -53,3 +53,18 @@ export function useResponsiveTheme() {
     "data-spacing-sizing-mode": isMobile ? "mobile" : "desktop",
   };
 }
+
+// Hook for responsive sizing - returns scale factor for medium screens
+export function useResponsiveScale() {
+  const screenWidth = useWindowWidth();
+  const isMobile = useIsMobile();
+
+  if (isMobile) return 1; // Mobile uses normal scale
+
+  // For screens between 769px and 1440px, scale down proportionally
+  if (screenWidth < 1440) {
+    return Math.max(0.7, screenWidth / 1440); // Minimum 70% scale
+  }
+
+  return 1; // Desktop uses normal scale
+}
