@@ -737,15 +737,6 @@ html {
     height: auto !important;
   }
 
-  /* Add slight padding to prevent edge cutoff */
-  .home-mobile,
-  .about-us-desktop,
-  .contact-us-desktop,
-  .showcase-desktop,
-  .companies-solutions {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
 }
 
 /* Desktop centering and layout fixes */
