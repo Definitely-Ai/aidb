@@ -1,7 +1,6 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
-import { useResponsiveScale } from "./breakpoints";
 import { AboutUsDesktop } from "./screens/AboutUsDesktop";
 import { CompaniesSolutions } from "./screens/CompaniesSolutions";
 import { ContactUsDesktop } from "./screens/ContactUsDesktop";
@@ -95,23 +94,9 @@ const router = createBrowserRouter([
 ]);
 
 export const App = () => {
-  const scale = useResponsiveScale();
-
-  const wrapperStyle =
-    scale === 1
-      ? { width: "100%", overflowX: "hidden" }
-      : {
-          width: "1440px",
-          transform: `scale(${scale})`,
-          transformOrigin: "top left",
-          overflowX: "hidden",
-        };
-
   return (
     <ErrorBoundary>
-      <div style={wrapperStyle}>
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </ErrorBoundary>
   );
 };

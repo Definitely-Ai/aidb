@@ -719,9 +719,13 @@ html {
   .about-us-desktop,
   .contact-us-desktop,
   .showcase-desktop,
-  .companies-solutions {
+  .companies-solutions,
+  body,
+  #app {
+    width: 100% !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
+    margin: 0 auto !important;
   }
 
   /* Ensure any fixed-width 1440px elements scale properly */
