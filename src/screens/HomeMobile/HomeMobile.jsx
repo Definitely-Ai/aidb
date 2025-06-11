@@ -282,7 +282,7 @@ export const HomeMobile = () => {
               loop
               muted
               playsInline
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              src="https://cdn.animaapp.com/projects/682f5a093c77459e8b8a213f/files/video_ready_neon_motherboard.mp4"
               style={{
                 boxShadow: !isMobile ? "12px 20px 4px #eee7f5" : undefined,
                 height: isMobile ? "188.44px" : !isMobile ? "720px" : undefined,
