@@ -286,7 +286,7 @@ export const HomeMobile = () => {
               loop
               muted
               playsinline
-              src="https://cdn.animaapp.com/projects/682f5a093c77459e8b8a213f/files/video_ready_neon_motherboard.mp4"
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
               width="100%"
             />
           </div>
