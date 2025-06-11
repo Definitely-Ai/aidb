@@ -26,7 +26,7 @@ export const HomeMobile = () => {
         height: !isMobile ? "4186px" : undefined,
         minHeight: isMobile ? "100vh" : undefined,
         width: "100%",
-        maxWidth: "100vw",
+        maxWidth: "100%",
         overflowX: "hidden",
       }}
     >
@@ -275,18 +275,16 @@ export const HomeMobile = () => {
               </div>
             </div>
 
-            <video
+            {/* Temporary placeholder until video content is ready */}
+            <img
+              alt="Company logo"
               className="placeholder-lightbox"
+              src="/img/chatgpt-image-jun-3-2025-02-28-23-pm-1.png"
               style={{
                 boxShadow: !isMobile ? "12px 20px 4px #eee7f5" : undefined,
                 height: isMobile ? "188.44px" : !isMobile ? "720px" : undefined,
+                objectFit: "cover",
               }}
-              autoplay="autoplay"
-              height="100%"
-              loop
-              muted
-              playsinline
-              src="https://cdn.animaapp.com/projects/682f5a093c77459e8b8a213f/files/video_ready_neon_motherboard.mp4"
               width="100%"
             />
           </div>
