@@ -31,7 +31,7 @@ export const ShowcaseDesktop = () => {
       style={{
         minHeight: isMobile ? "100vh" : "5292px",
         width: "100%",
-        maxWidth: "100vw",
+        maxWidth: "100%",
         overflowX: "hidden",
       }}
     >

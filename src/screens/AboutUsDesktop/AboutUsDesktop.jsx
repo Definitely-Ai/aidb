@@ -24,7 +24,7 @@ export const AboutUsDesktop = () => {
       style={{
         minHeight: isMobile ? "100vh" : !isMobile ? "3465.88px" : undefined,
         width: "100%",
-        maxWidth: "100vw",
+        maxWidth: "100%",
         overflowX: "hidden",
       }}
     >

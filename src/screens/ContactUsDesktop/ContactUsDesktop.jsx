@@ -27,7 +27,7 @@ export const ContactUsDesktop = () => {
       style={{
         minHeight: isMobile ? "100vh" : !isMobile ? "2105px" : undefined,
         width: "100%",
-        maxWidth: "100vw",
+        maxWidth: "100%",
         overflowX: "hidden",
       }}
     >
