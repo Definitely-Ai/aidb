@@ -275,15 +275,17 @@ export const HomeMobile = () => {
               </div>
             </div>
 
-            {/* Temporary placeholder until video content is ready */}
-            <img
-              alt="Company logo"
+            <video
               className="placeholder-lightbox"
-              src="/img/chatgpt-image-jun-3-2025-02-28-23-pm-1.png"
+              autoPlay
+              height="100%"
+              loop
+              muted
+              playsInline
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
               style={{
                 boxShadow: !isMobile ? "12px 20px 4px #eee7f5" : undefined,
                 height: isMobile ? "188.44px" : !isMobile ? "720px" : undefined,
-                objectFit: "cover",
               }}
               width="100%"
             />
