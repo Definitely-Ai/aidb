@@ -275,17 +275,15 @@ export const HomeMobile = () => {
               </div>
             </div>
 
-            <video
-              autoPlay
+            {/* Temporary placeholder until video content is ready */}
+            <img
+              alt="Company logo"
               className="placeholder-lightbox"
-              height="100%"
-              loop
-              muted
-              playsInline
-              src="https://cdn.animaapp.com/projects/682f5a093c77459e8b8a213f/files/video_ready_neon_motherboard.mp4"
+              src="/img/chatgpt-image-jun-3-2025-02-28-23-pm-1.png"
               style={{
                 boxShadow: !isMobile ? "12px 20px 4px #eee7f5" : undefined,
                 height: isMobile ? "188.44px" : !isMobile ? "720px" : undefined,
+                objectFit: "cover",
               }}
               width="100%"
             />
