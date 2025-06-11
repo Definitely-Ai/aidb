@@ -21,7 +21,7 @@ export const CompaniesSolutions = () => {
       style={{
         minHeight: isMobile ? "7399px" : !isMobile ? "6108px" : undefined,
         width: "100%",
-        maxWidth: "100vw",
+        maxWidth: "100%",
         overflowX: "hidden",
       }}
     >
