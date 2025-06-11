@@ -277,16 +277,16 @@ export const HomeMobile = () => {
 
             <video
               className="placeholder-lightbox"
+              autoPlay
+              height="100%"
+              loop
+              muted
+              playsInline
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
               style={{
                 boxShadow: !isMobile ? "12px 20px 4px #eee7f5" : undefined,
                 height: isMobile ? "188.44px" : !isMobile ? "720px" : undefined,
               }}
-              autoplay="autoplay"
-              height="100%"
-              loop
-              muted
-              playsinline
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
               width="100%"
             />
           </div>
