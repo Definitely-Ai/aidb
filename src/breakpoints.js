@@ -63,7 +63,8 @@ export function useResponsiveScale() {
 
   // For screens between 769px and 1440px, scale down proportionally
   if (screenWidth < 1440) {
-    return Math.max(0.7, screenWidth / 1440); // Minimum 70% scale
+    // Scale proportionally with no fixed minimum so content fits the viewport
+    return screenWidth / 1440;
   }
 
   return 1; // Desktop uses normal scale

@@ -26,7 +26,7 @@ export const HomeMobile = () => {
         height: !isMobile ? "4186px" : undefined,
         minHeight: isMobile ? "100vh" : undefined,
         width: "100%",
-        maxWidth: "100vw",
+        maxWidth: "100%",
         overflowX: "hidden",
       }}
     >
