@@ -282,7 +282,7 @@ export const HomeMobile = () => {
               loop
               muted
               playsInline
-              src="/static/img/Video_Ready_Neon_Motherboard.mp4"
+              src="/img/Video_Ready_Neon_Motherboard.mp4"
               style={{
                 boxShadow: !isMobile ? "12px 20px 4px #eee7f5" : undefined,
                 height: isMobile ? "188.44px" : !isMobile ? "720px" : undefined,
